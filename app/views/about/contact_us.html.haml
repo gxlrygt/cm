@@ -1,0 +1,61 @@
+- content_for :about_body do
+  %article.sub-page-content{"ng-controller" => "ContactFormController", "ng-cloak" => true}
+    %h2.sub-title
+      Contact Us
+    %p.slogan
+      %span.fancy_title.last-red CHMW
+      is currently licensed to lend in California, Arizona, Colorado, and Texas.
+    %h2.heading
+      Got a question? We’d love to hear from you.
+    %div.form.form--contact
+      .flash-error{"ng-show" => "hasError()"}
+        %div
+          Please Review & Complete all required fields.
+      %ul
+        %li.form-group{"ng-class": "{'has-error': hasError('name')}"}
+          %input{:type=>"text", :placeholder=>"Name", "ng-model" => "name"}
+        %li.form-group{"ng-class": "{'has-error': hasError('email')}"}
+          %input{:type=>"text", :placeholder=>"Email", "ng-model" => "email"}
+        %li
+          %input{:type=>"text", :placeholder=>"Company/Organization", "ng-model" => "company"}
+      %ul
+        %li.form-group{"ng-class": "{'has-error': hasError('regarding')}"}
+          %select.form-control{"ng-model" => "regarding", "ui-select2" => 'defaultSelect2Options'}
+            %option{value: ""} Regarding
+            %option{value: "Broker Approval"} Broker Approval
+            %option{value: "Loan Submission"} Loan Submission
+            %option{value: "Career Opportunities"} Career Opportunities
+            %option{value: "Media Inquiries"} Media Inquiries
+            %option{value: "Loans in Progress"} Loans in Progress
+            %option{value: "Other"} Other
+        %li.form-group{"ng-class": "{'has-error': hasError('message')}"}
+          %textarea{"ng-model" => "message", placeholder: "Message"}
+        %li.tar
+          %a.bt-cta.bt-cta--red{:href => "javascript:void(0)", "ng-click" => "submit()"}
+            Submit
+          .spinner{"ng-show" => "submittingForm"}
+            = image_tag("ajax-loader.gif")
+          %p{"ng-show" => "contactFormSubmitted"} Thank you! Your information has been submitted!
+          %p{"ng-show" => "errorSubmittingForm"} Sorry, we encountered an error. Please try again later.
+= render "page_body"
+%section
+  %article.hero-content.hero-content--about
+    %section.content-wrap.fx-lc
+      %div.map
+        %h2.heading
+          Office
+        %b
+          Commerce Home Mortgage Wholesale
+        %address.mb15
+          2030 Main St., Suite 500
+          %br
+          Irvine, CA 92614
+          %br
+          855.375.8626
+          %br
+          = link_to "brokers@chmwholesale.com", "mailto:brokers@chmwholesale.com"
+        %a.bt-cta.bt-cta--red{:href => "https://maps.google.com?daddr=2030+Main+St+Suite+500+Irvine+CA+92614", target: "_blank"}
+          Get Directions
+        = image_tag("minimap.jpg", :class => "map-img")
+    = image_tag("img-contact-us-bottom.jpg")
+

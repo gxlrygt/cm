@@ -1,0 +1,237 @@
+%article.coverletter
+  %header
+    = wicked_pdf_image_tag("logo-black.png", :class=>"logo")
+    %address
+      2030 Main Street, Suite 500 | Irvine, California 92614
+  %table
+    %thead
+      %tr
+        %td{:colspan => "2"} 
+          %h2 Loan Submission Form
+    %tbody
+      %tr
+        %td
+          Account Executive: #{loan.account_executive}
+        %td
+  %table
+    %thead    
+      %tr
+        %td
+          %h3 Broker Compensation
+        %td
+    %tbody  
+      %tr
+        %td
+          #{loan.lender_or_borrower_paid} 
+        %td
+      %tr
+        %td
+          %p 
+            Underwriting Fee Buyout: #{loan.underwriting_fee_buyout}
+        %td
+      %tr
+        %td
+          Lender Compensation: #{loan.lender_compensation}%
+        %td
+  %table  
+    %thead  
+      %tr
+        %td{:colspan => "2"} 
+          %h3 Broker Information
+    %tbody  
+      %tr
+        %td 
+          Broker Name: #{loan.broker_first_name} #{loan.broker_last_name}
+        %td
+          Processor Name: #{loan.processor_first_name} #{loan.processor_last_name}
+      %tr
+        %td 
+          Broker Phone: #{loan.broker_phone}
+        %td
+          Processor Phone: #{loan.processor_phone}
+      %tr
+        %td 
+          Broker Email: #{loan.broker_email}
+        %td
+          Processor Email: #{loan.processor_phone}
+  %table  
+    %thead  
+      %tr
+        %td{:colspan => "2"} 
+          %h3 Borrower Information
+    %tbody  
+      %tr
+        %td
+          Borrower Name: #{loan.borrower_first_name} #{loan.borrower_last_name}
+        %td
+          Co-Borrower Name: #{loan.coborrower_first_name} #{loan.coborrower_last_name}
+      %tr
+        %td 
+          Borrower Email: #{loan.borrower_email}
+        %td
+          Co-Borrower Email: #{loan.coborrower_email}
+      %tr
+        %td 
+          Mid FICO Score: #{loan.borrower_mid_fico_score}
+        %td 
+          Mid FICO Score: #{loan.coborrower_mid_fico_score}
+      %tr
+        %td 
+          Property Address: 
+          %span 
+            #{loan.address} 
+          %span 
+            #{loan.city}, #{loan.state.name} #{loan.zip}
+        %td
+  %table
+    %thead
+      %tr
+        %td{:colspan => "2"} 
+          %h3 Loan Information
+    %tbody
+      %tr
+        %td
+          Loan Type: #{loan.loan_type}
+        %td 
+          Transaction Type: #{loan.transaction_type}
+      %tr
+        %td{:colspan => "2"}
+          Program Name: _________________________________________
+      %tr  
+        %td
+          FHA/VA Underwriting Type: #{loan.fha_underwriting_type}
+        %td
+          Occupancy: #{loan.occupancy}
+      %tr
+        %td
+          Appraisal Required: #{loan.appraisal_needed}
+        %td
+          Property Type: #{loan.property_type}
+      %tr  
+        %td
+          Impounds/Escrows: #{loan.impounds_or_escrows} 
+        %td
+          Term: #{loan.term}
+      %tr  
+        %td
+          %input{type: "checkbox"} FIXED
+          %input{type: "checkbox"} ARM 
+        %td
+          Arm Type:
+          %input{type: "checkbox"} 3/1
+          %input{type: "checkbox"} 5/1
+          %input{type: "checkbox"} 7/1
+          %input{type: "checkbox"} 10/1 
+  %table
+    %thead
+      %tr
+        %td{:colspan => "4"} 
+          %h3 Loan Values
+    %tbody  
+      %tr
+        %td
+          Property Value: 
+          %span #{loan.property_value}
+        %td
+          Loan Amount: 
+          %span #{loan.loan_amount}
+        %td
+          Disclosed Interest Rate: 
+          %span #{loan.disclosed_rate_pct}
+        %td
+          LTV/CLTV: #{loan.ltv} 
+          %span #{loan.cltv}  
+  %h3
+    Additional Information
+  %p.additional-information
+    #{loan.additional_details}
+ 
+// NEW PAGE /////////////////
+
+.page-break
+%article.coverletter
+  %table
+    %thead
+      %tr
+        %td{:colspan => "2"} 
+          %h2 LE REQUEST COVERSHEET:
+          %p Must be sent to CHMW within 24 hours of application date of 1003
+    %tbody      
+      %tr
+        %td{:colspan => "2"} 
+          %h3 Loan Info
+      %tr
+        %td
+          Borrower Name: #{loan.borrower_first_name} #{loan.borrower_last_name}
+        %td
+          Co-Borrower Name: #{loan.coborrower_first_name} #{loan.coborrower_last_name}
+      %tr
+        %td 
+          Borrower Email: #{loan.borrower_email}
+        %td
+          Co-Borrower Email: #{loan.coborrower_email}
+      %tr
+        %td{:colspan => "2"} 
+          Property Address:
+          %span #{loan.address} 
+          %span #{loan.city}, #{loan.state.name} #{loan.zip}
+  %table
+    %thead
+      %tr
+        %td
+          %h3 Loan Information 
+    %tbody
+      %tr
+        %td
+          Loan Type: #{loan.loan_type}
+  %table
+    %tbody
+      %tr
+        %td{:colspan => "2"} 
+          Loan Program: _________________________________________
+      %tr
+        %td
+          Impounds/Escrows: #{loan.impounds_or_escrows}  
+      %tr{:colspan => "2"}
+        %td
+          #{loan.lender_or_borrower_paid}
+  %table
+    %tbody
+      %tr
+        %td
+          Third-Party Processing Fee: _________________________________________
+        %td
+      %tr
+        %td
+          LO/Processor Name: #{loan.broker_first_name} #{loan.broker_last_name}
+        %td
+      %tr
+        %td
+          Broker Email: #{loan.broker_email}
+  %h2
+    Please Check One Below:
+  %ul.mb25--force
+    %li
+      %input{type: "checkbox"} Purchase  
+    %li
+      %input{type: "checkbox"} Rate/Term Refinance 
+    %li
+      %input{type: "checkbox"} Cash Out Refinance 
+  %h2 Required Documents
+  %ul.alphabetical.mb25--force
+    %li
+      1003
+    %li
+      Itemization of Fees
+    %li
+      Settlement Provider’s List
+    %li
+      Verified Fee Sheet from escrow/title company
+  %p
+    By signing below, the broker attests that the information above is correct and that all fees have been accounted for in the Itemization of Fees and Verified Fee Sheet forms from the escrow & title company.
+  %table{:class => "signature_table"}
+    %tbody
+      %tr
+        %td{:colspan => "2"} Signature
+        %td{:colspan => "1"} Date
+

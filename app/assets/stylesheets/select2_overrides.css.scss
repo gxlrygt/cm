@@ -1,0 +1,108 @@
+$wh-red: #e2231a;
+
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+.select2-container {
+  display: block;
+  margin-bottom: 0.65em;
+
+};
+
+.select2-container .select2-choice {
+    height: 40px;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    background-color: #fff;
+    background-image: none;
+    background: #fff;
+    color: #aaa;
+}
+
+.select2-container .select2-choice .select2-chosen { margin-top: 4px }
+.select2-container .select2-choice abbr { top: 13px }
+.select2-container .select2-choice,
+.select2-container .select2-choice .select2-arrow {
+    -webkit-border-radius: 0;
+    border-radius: 3px;
+    border: 2px solid #e5e5e5;
+    transition: all 0.3s ease-in-out;
+}
+
+.select2-container .select2-choice:hover {
+	border-color: #c4c4c4;
+}
+.select2-container .select2-choice .select2-arrow {
+    background-color: #fff;
+    background-image: none;
+    background: #fff;
+    width: 22px;
+    border: 0;
+}
+
+.select2-drop-active {
+	border: 2px solid $wh-red;
+	border-top: none;
+}
+.select2-drop.select2-drop-above.select2-drop-active{
+	border: 2px solid $wh-red;
+	border-bottom: none;
+}
+
+.select2-container-active .select2-choice,
+.select2-container-active .select2-choices,
+.select2-dropdown-open.select2-drop-above .select2-choice,
+.select2-dropdown-open.select2-drop-above .select2-choices {
+	border: 2px solid $wh-red;
+}
+
+.select2-container .select2-choice .select2-arrow b>span { margin: 4px 0 0 6px }
+.select2-container.select2-container-active .select2-choice { border-color: #91acce }
+.select2-container.select2-dropdown-open .select2-choice { border-bottom-color: #ccc }
+.select2-drop {
+    -webkit-border-radius: 0 !important;
+    border-radius: 0 !important;
+}
+
+.select2-container.select2-container-active .select2-choice {
+	border-color: $wh-red;
+}
+
+.select2-drop:not(.select2-drop-above) { margin-top: -3px }
+.select2-drop .select2-results { max-height: 300px }
+.select2-drop .select2-results li {
+    line-height: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+.select2-search { margin: 4px 0 }
+.select2-search input,
+.select2-search input:focus {
+    background-color: #fff;
+    background-image: none;
+    background: #fff;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    border: none;
+}
+
+.select2-container.form-control {
+    border: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    padding: 0;
+    a {
+      color: #aaa;
+    }
+}
+.select2-results .select2-highlighted{
+  background: $wh-red;
+}

@@ -1,0 +1,233 @@
+$tablet-landscape: new-breakpoint(max-width 1024px 12);
+$tablet-portrait: new-breakpoint(max-width 860px 8);
+$mobile: new-breakpoint(max-width 480px 4);
+$large-screen: em(860) !default;
+$grid-item-columns: 4;
+$grid-item-big-columns: 8;
+
+// Columns
+
+@mixin grid-item-columns($columns) {
+  width: (100% / 12) * $columns;
+}
+
+// Media Q
+
+@include media($large-screen) {
+  .grid-items-lines {
+    .grid-item {
+        &:not(:last-child) {
+        border-right: 1px solid $wh-red;
+      }
+      text-align: left;
+      @include grid-item-columns($grid-item-columns);
+      p {
+        max-width: 90%;
+      }
+      .grid-item-big {
+        @include grid-item-columns($grid-item-big-columns);
+      }
+    }
+  }
+
+  //Side Image
+
+  .side-image {
+//    @include row(table);
+    .images-wrapper {
+      @include span-columns(5);
+      padding: 3em 1em;
+      img{
+        width: 100%;
+      }
+    }
+    .side-image-content {
+      @include span-columns(7);
+      padding: 3em 1em;
+    }
+  }
+}
+
+@include media($tablet-landscape) {
+  .container {
+    min-width: 770px;
+  } 
+  .main-header{
+    min-width: 815px;
+  }
+  h5.heading{
+    font-size: 35px;
+  }
+  .copy{
+    width: 80%;
+    h4{
+      font-size: 50px;
+    }
+    // h5 {
+    //   font-size: 20px;
+    // }
+    // h3 {
+    //   margin-bottom: 12px;
+    //   font-size: 18px;
+    //   line-height: 20px;
+    //   margin-top: 15px;
+    // }
+  }
+  .utility ul{
+    li{
+      &.loan-bt{
+          width: inherit;
+      }
+      &.hamburger-bt{
+        &:last-child{
+            width: 47px;
+        }
+      }
+    }
+  }
+}
+
+@include media($tablet-portrait) {
+  body {
+    font-size: 15px;
+  }
+  .container,
+  .main-header {
+    min-width: 480px;
+  }
+  .welcome .copy {
+    padding-left: 62px !important;
+  }
+  section {
+    &.content-wrap{
+        width: 100%;
+    }
+    &.hero-content.main {
+        height: 600px;
+    }
+  }
+  #logo{
+    a{
+      height: 44px;
+    }
+  }
+  .utility ul{
+    li{
+      &.loan-bt{
+          margin-left: 10px;
+          width: inherit;
+      }
+      &.hamburger-bt{
+        &:last-child{
+            width: 47px;
+        }
+      }
+      > a{
+        padding: 11px 16px;
+        font-size:15px;
+
+      }
+    }
+  }
+  .card header{
+      margin-left: 20px;
+      margin-right: 20px;
+      width: 100%;
+  }
+  .sub-page{
+    .hero-content{
+      background-attachment: initial;
+      background-size: cover;
+      background-position: center 0;
+      .title{
+        font-size: 50px;
+      }
+    }
+    .sub-title {
+      left: -17px;
+    }
+    .slogan{
+      font-size: 27px;
+    }
+    .sub-page-sidebar{
+      padding: 15px;
+    }
+  }
+
+  // Welcome
+
+  .welcome {
+    background: $wh-red;
+    height: auto;
+    //background-size: contain;
+    background-position: right center;
+    img {
+      visibility: hidden;
+    }
+    .copy {
+      background-color: transparent;
+      padding: 15px;
+      width: 100%;
+      h4{
+        font-size: 35px;
+        display: inline-block;
+        color:#ffffff;
+        border-bottom-color: #ffffff;
+      }
+      h3{
+        color:#ffffff;
+      }
+      .bt-cta{
+        color: #ffffff;
+        border-color: #ffffff;
+        &:focus,
+        &:hover {
+          background-color: $wh-red;
+          border-color: $wh-red;
+          color:#ffffff;
+        }
+      }
+    }
+  }
+
+  //Grid Items Homepage
+  .grid-item-big {
+    p {
+      max-width: 60%;
+    }
+  }
+
+  .grid-items-lines .grid-item:nth-child(-n+2) {
+    padding: 1em;
+    border-bottom: 2px solid tint($wh-light-gray, 80);
+  }
+
+  // btns
+  .bt-cta {
+    &--arrow {
+      text-align: center;
+    }
+  }
+  .side-image {
+    //    @include row(table);
+    @include outer-container;
+    .images-wrapper {
+      @include span-columns(2);
+      padding: 1em 0;
+    }
+    .side-image-content {
+      @include span-columns(6);
+      padding: 1em;
+    }
+
+    #work-with-us-box{
+      font-size: 35px;
+    }
+  }
+  .hero-content{
+    height: 350px;
+  }
+  .sub-page .hero-content{
+    margin-top: 88px;
+  }
+}

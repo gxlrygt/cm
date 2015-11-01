@@ -1,0 +1,162 @@
+%article.type-system-rounded.wrapper
+  %p 
+    Hello #{@loan.broker_first_name},
+  %p 
+    Thank you for choosing Commerce Home Mortgage Wholesale to submit your loan.
+  %p
+    Below are the necessary steps to complete your loan submission:
+  %ol.list.numerical.wrapper 
+    %li
+      %p
+        Print the attached documents and sign
+    %li
+      %p
+        Upload DU 3.2, Calyx Point, or Encompass file to TPO
+    %li
+      %p
+        Upload the ‘Loan Submission Cover Sheet’, ‘Compensation Attestation’, and all loan documentation to TPO
+    %li
+      %p
+        Click the ‘Submit’ button within TPO when available
+  %p.section-header
+    FHA Streamline Specific Documents Required:
+  %ol.list.two-column.wrapper
+    %li
+      %p
+        %input{:type => "checkbox", name: "checkbox1"}
+        %span Copy of current Mortgage Statement
+    %li
+      %p
+        %input{:type => "checkbox", name: "checkbox2"}
+        %span Copy of Note/Security Instrument (current mtg)
+    %li
+      %p
+        %input{:type => "checkbox", name: "checkbox3"}
+        %span Est. HUD-1 with all broker, settlement, closing fees
+    %li
+      %p
+        %input{:type => "checkbox", name: "checkbox4"}
+        %span Asset Statements (if assets are required to close)
+    %li
+      %p
+        %input{:type => "checkbox", name: "checkbox5"}
+        %span Net Tangible Benefit Form         
+    %li
+      %p
+        %input{:type => "checkbox", name: "checkbox6"}
+        %span Payoff Demand good through funding date
+    %li
+      %p
+        %input{:type => "checkbox", name: "checkbox7"}
+        %span SSN and Photo ID          
+    %li
+      %p
+        %input{:type => "checkbox", name: "checkbox8"}
+        %span FHA Get a Home Inspection (dated prior to purchase contract)
+    %li
+      %p
+        %input{:type => "checkbox", name: "checkbox9"}
+        %span FHA Amendatory Clause/Real Estate Cert (signed/dated by all)                 
+    %li
+      %p
+        %input{:type => "checkbox", name: "checkbox10"}
+        %span FHA Important Notice to Homebuyer 92900B
+    %li
+      %p
+        %input{:type => "checkbox", name: "checkbox11"}
+        %span FHA Appraisal Value Disclosure        
+    %li
+      %p
+        %input{:type => "checkbox", name: "checkbox12"}
+        %span FHA Informed Consumer Choice Disclosure
+    %li
+      %p
+        %input{:type => "checkbox", name: "checkbox13"}
+        %span FHA Assumption Notice         
+    %li
+      %p
+        %input{:type => "checkbox", name: "checkbox14"}
+        %span FHA Loan Transmittal 92900-LT
+    %li
+      %p
+        %input{:type => "checkbox", name: "checkbox15"}
+        %span FHA Blanket Cert (true/correct copies)      
+    %li
+      %p
+        %input{:type => "checkbox", name: "checkbox16"}
+        %span FHA Refinance Auth (if applicable)
+    %li
+      %p
+        %input{:type => "checkbox", name: "checkbox17"}
+        %span FHA Case Assignment         
+    %li
+      %p
+        %input{:type => "checkbox", name: "checkbox18"}
+        %span HUD 92900A Addendum (signed/dated by all)
+    %li
+      %p
+        %input{:type => "checkbox", name: "checkbox19"}
+        %span FHA Completed LDP and GSA lists
+  %p.section-header
+    General Loan Documents Required:
+  %ol.list.two-column.wrapper
+    %li
+      %p
+        %input{:type => "checkbox", name: "checkbox20"}
+        %span Broker Typed 1008/1003          
+    %li
+      %p
+        %input{:type => "checkbox", name: "checkbox21"}
+        %span Initial 1003 and LT 92900A (executed by all)
+    %li
+      %p
+        %input{:type => "checkbox", name: "checkbox22"}
+        %span Initial Good Faith Estimate, Fees, Worksheet & Settlement Provider List           
+    %li
+      %p
+        %input{:type => "checkbox", name: "checkbox23"}
+        %span Any updated GFEs issued since the initial GFE with completed Changed Circumstance          
+    %li
+      %p
+        %input{:type => "checkbox", name: "checkbox24"}
+        %span Broker Typed 1008/1003          
+    %li
+      %p
+        %input{:type => "checkbox", name: "checkbox25"}
+        %span Anti Steering Disclosure
+    %li
+      %p
+        %input{:type => "checkbox", name: "checkbox26"}
+        %span Intent to Proceed         
+    %li
+      %p
+        %input{:type => "checkbox", name: "checkbox27"}
+        %span Credit Report (less than 45 days old)
+    %li
+      %p
+        %input{:type => "checkbox", name: "checkbox28"}
+        %span Borrower Authorization          
+    %li
+      %p
+        %input{:type => "checkbox", name: "checkbox29"}
+        %span Purchase: Purchase Agreement/Contract
+    %li
+      %p
+        %input{:type => "checkbox", name: "checkbox30"}
+        %span Refinance: Payoff Statement
+    %li
+      %p
+        %input{:type => "checkbox", name: "checkbox31"}
+        %span Local/State Specific disclosures             
+  %p                            
+    **No appraisal necessary for this loan
+  %p
+    %strong Questions? 
+    We are happy to help! Call Client Services at 949.423.3026 or email us at: 
+    %u
+      %a{:href=>"mailto:nathaniel@commercemtgwholesale.com"}
+        nathaniel@commercemtgwholesale.com
+
+  %p
+    Sincerely,
+  = render "shared/emails/logo"

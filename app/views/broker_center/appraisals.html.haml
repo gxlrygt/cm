@@ -1,0 +1,312 @@
+- content_for :broker_center_body do
+  %article.sub-page-content
+    %h2.sub-title
+      Appraisals
+    %div.slogan-with-sort
+      %p.slogan.fx
+        Order an appraisal
+        = image_tag("street-smart-logo.jpg", :class => "ml150")
+    %p.body-text-1.mb40
+      We are pleased to partner with Street Smart Valuations. SSV is a licensed, certified appraisal service who knows the local real estate landscape and can provide an accurate estimate of the property’s value.
+      / %span.fancy_title.last-red CHMW.
+      / SSV offers exceptional service and we invite you to contact them directly for all your appraisal needs.
+    / thats visible when logged in
+    - if current_user && current_user.street_smart_valuations_credentials && current_user.street_smart_valuations_credentials.username.present? && current_user.street_smart_valuations_credentials.password.present?
+      %form{:action => "https://streetsmartvaluations.vmpclient.com/SignIn.aspx", :method => "POST"}
+        - @street_smart_inputs.each do |input|
+          %input{:name => "#{input.attributes['name'].value}", :type => "#{input.attributes['type'].value}", :value => "#{input.attributes['value'].value}"}
+        %input{:name => "__EVENTTARGET", :type => "hidden", :value => "ctl00$ctl00$Main$Main$btnSignIn"}
+        %input{:name => "__EVENTARGUMENT", :type => "hidden", :value => ""}
+        %input{:name => "ctl00$ctl00$Main$Main$txtUsername", :placeholder => "Username", :type => "hidden", :value => current_user.street_smart_valuations_credentials.username}
+        %input{:name => "ctl00$ctl00$Main$Main$txtPassword", :placeholder => "Password", :type => "hidden", :value => current_user.street_smart_valuations_credentials.password}
+        %input{:name => "ctl00$ctl00$Dialogs$Dialogs$txtEmailAddress", :type => "hidden", :value => ""}
+        %input{:name => "ctl00$ctl00$Main$Main$btnSignIn.x", :type => "hidden", :value => "54"}
+        %input{:name => "ctl00$ctl00$Main$Main$btnSignIn.y", :type => "hidden", :value => "40"}
+        %input{:type => "submit", value: "Continue to order your appraisal ►"} 
+
+    - else
+      #tab.mb25
+        .tab.tab--two
+          %a.tab__bt{:href => "#"}
+            %span Login
+          %a.tab__bt{:href => "#"}
+            %span Request An Account
+        %form.tab__content.form.form--login{:action => "https://streetsmartvaluations.vmpclient.com/SignIn.aspx", :method => "POST"}
+          - @street_smart_inputs.each do |input|
+            %input{:name => "#{input.attributes['name'].value}", :type => "#{input.attributes['type'].value}", :value => "#{input.attributes['value'].value}"}
+          %input{:name => "__EVENTTARGET", :type => "hidden", :value => "ctl00$ctl00$Main$Main$btnSignIn"}
+          %input{:name => "__EVENTARGUMENT", :type => "hidden", :value => ""}
+          %input{:name => "ctl00$ctl00$Dialogs$Dialogs$txtEmailAddress", :type => "hidden", :value => ""}
+          %input{:name => "ctl00$ctl00$Main$Main$btnSignIn.x", :type => "hidden", :value => "54"}
+          %input{:name => "ctl00$ctl00$Main$Main$btnSignIn.y", :type => "hidden", :value => "40"}
+          %ul
+            %li
+              %input{:name => "ctl00$ctl00$Main$Main$txtUsername", :placeholder => "Username", :type => "text"}
+            %li
+              %input{:name => "ctl00$ctl00$Main$Main$txtPassword", :placeholder => "Password", :type => "password"}
+            %li.mb20
+              %label.light
+                = check_box_tag 'remember me'
+                REMEMBER ME
+            %li
+              %input.bt-cta.bt-cta--red{:type => "submit", value: "Sign in"}
+            %li
+              Need Help? 
+              %a{:href=>"http://www.streetsmartvaluations.com/contact.php"} Contact Us.
+
+        .tab__content.form.form--request{"ng-controller" => "AppraisalsSignupController"}
+          %ul
+            %li
+              %input{:type=>"text", :placeholder=>"First & Last Name", "ng-model" => "signupForm.yourname"}
+            %li
+              %input{:type=>"text", :placeholder=>"Company Name", "ng-model" => "signupForm.company"}
+            %li
+              %input{:type=>"text", :placeholder=>"Email", "ng-model" => "signupForm.email"}
+            %li
+              %input{:type=>"text", :placeholder=>"Company Address", "ng-model" => "signupForm.address"}
+            %li
+              %input{:type=>"text", :placeholder=>"Phone Number", "ng-model" => "signupForm.phone"}
+            %li
+              %input{:type=>"text", :placeholder=>"City", "ng-model" => "signupForm.city"}
+            %li
+              %input{:type=>"text", :placeholder=>"Name of Lender", "ng-model" => "signupForm.lender"}
+            %li
+              = select_tag "state", options_for_select([["Select Your State", ""]]) + options_from_collection_for_select(State.all, :code, :name, State.california.id), "ng-model" => "signupForm.state", class: "select2"
+            %li
+              %input{:type=>"text", :placeholder=>"Lender Representative Name", "ng-model" => "signupForm.rep"}
+            %li
+              %input{:type=>"text", :placeholder=>"Zip Code", "ng-model" => "signupForm.zip"}
+          %a.bt-cta.bt-cta--red{href: "javascript:void(0)", "ng-click" => "signup()", "ng-disabled" => "signupRequested"}
+            Register
+          %p.success{"ng-show" => "signupSuccess"}
+            {{ signupSuccessMessage }}
+          %p.error{"ng-show" => "signupError"}
+            {{ signupErrorMessage }}
+    .collapse
+      %div.collapse__header
+        Appraisal Fee Schedule
+        %span.arrow
+      %div.collapse__content 
+        .matrices
+          %table
+            %tbody
+              %thead  
+                %tr
+                  %td{:colspan => "5"}
+                    Appraisal Fee schedule
+              %tr
+                %td{:colspan => "2"}
+                  Product Description
+                %td
+                  Property type
+                %td
+                  Occupancy
+                %td
+                  Price
+              %tr
+                %td{:colspan => "2"}
+                  1004 Single Family Appraisal w/ Cost Approach
+                %td
+                  Single Family
+                %td
+                  Owner/Second home
+                %td
+                  $495
+              %tr
+                %td{:colspan => "2"}
+                  1004 &amp; 1007 Single Family Investment Appraisal
+                %td
+                  Single Family
+                %td
+                  Non-Owner/Investment
+                %td
+                  $625
+              %tr
+                %td{:colspan => "2"}
+                  1004C Manufactured Home Appraisal
+                %td
+                  Manufactured
+                %td
+                  Owner/Second home
+                %td
+                  $550
+              %tr
+                %td{:colspan => "2"}
+                  1025 2–4 Multi Family Appraisal w Cost Approach
+                %td
+                  2–4 Unit
+                %td
+                  Owner/Non-Owner
+                %td
+                  $725
+              %tr
+                %td{:colspan => "2"}
+                  1073 Condo Appraisal
+                %td
+                  Single Family
+                %td
+                  Owner
+                %td
+                  $495
+              %tr
+                %td{:colspan => "2"}
+                  1073 &amp; 1007 Condo Investment Appraisal
+                %td
+                  Condo
+                %td
+                  Non-Owner/Investment
+                %td
+                  $625
+              %tr
+                %td{:colspan => "2"}
+                  2055 Drive By Exterior Appraisal
+                %td
+                  Single Family
+                %td
+                  Owner
+                %td
+                  $350
+              %tr
+                %td{:colspan => "2"}
+                  FHA—1004 Single Family Appraisal w/ Cost Approach
+                %td
+                  Single Family
+                %td
+                  Owner
+                %td
+                  $495
+              %tr
+                %td{:colspan => "2"}
+                  FHA—1004 &amp; 1007 Single Family Investment Appraisal
+                %td
+                  Single Family
+                %td
+                  Non-Owner/Investment
+                %td
+                  $650
+              %tr
+                %td{:colspan => "2"}
+                  FHA—1025 2–4 Multi Family Appraisal w/ Cost Approach
+                %td
+                  2–4 Unit
+                %td
+                  Owner/Non-Owner
+                %td
+                  $680
+              %tr
+                %td{:colspan => "2"}
+                  FHA—1004C Manufactured Home Appraisal
+                %td
+                  Single Family
+                %td
+                  Owner
+                %td
+                  $550
+              %tr
+                %td{:colspan => "2"}
+                  FHA—1073 Condo Appraisal
+                %td
+                  Condo
+                %td
+                  Owner
+                %td
+                  $495
+              %tr
+                %td{:colspan => "2"}
+                  FHA—2055 Drive By Exterior Appraisal
+                %td
+                  Single Family
+                %td
+                  Owner
+                %td
+                  $350
+              %tr
+                %td{:colspan => "2"}
+                  Value &gt; 1 Million/Jumbos Base Price*
+                %td
+                  All
+                %td
+                  All
+                %td
+                  $700
+              %tr
+                %td{:colspan => "2"}
+                  1004D—Re-Inspection Of Repairs
+                %td
+                  All
+                %td
+                  All
+                %td
+                  $125
+              %tr
+                %td{:colspan => "2"}
+                  1004D—Re-Certification of Value
+                %td
+                  All
+                %td
+                  All
+                %td
+                  $225
+              %tr
+                %td{:colspan => "2"}
+                  Desk Review
+                %td
+                  Single Family/Condo
+                %td
+                  Owner/Non-Owner
+                %td
+                  $125
+              %tr
+                %td{:colspan => "2"}
+                  Field Review
+                %td
+                  Single Family/Condo
+                %td
+                  Owner/Non-Owner
+                %td
+                  $350
+              %tr
+                %td{:colspan => "2"}
+                  Desk Review
+                %td
+                  2–4 Unit
+                %td
+                  Owner/Non-Owner
+                %td
+                  $175
+              %tr
+                %td{:colspan => "2"}
+                  Field Review
+                %td
+                  2–4 Unit
+                %td
+                  Owner/Non-Owner
+                %td
+                  $400
+      %div.collapse__header
+        Frequently Asked Questions
+        %span.arrow
+      %div.collapse__content
+        %h6.heading.mb15--force
+          1) Do you use local appraisers?
+        %p.body-text-1
+          Absolutely! Street Smart Valuations, LLC takes great care to select FHA approved, certified appraisers with at least five years experience in all of the coverage areas we serve. In most cases, appraisers live and work within 10 miles of the borrower’s subject property. We use the Mercury Network, the provider of an established appraisal management software program, to filter out appraisers who have low rankings and do not meet our qualifications. In addition, our appraisers are fairly compensated with fees that are reasonable and customary for their coverage areas.
+        %h6.heading.mb15--force
+          2) Can I request a specific appraiser for my transaction?
+        %p.body-text-1
+          The broker, real estate agent, or anyone directly compensated from the loan transaction cannot have a role in the selection or retainment of the appraiser, so we cannot accommodate requests for appraisers for specific assignments.
+        %h6.heading.mb15--force
+          3) I know a great appraiser, can I have them added to the panel?
+        %p.body-text-1
+          The broker, real estate agent, or anyone directly compensated from the loan transaction cannot have a role in the selection or retainment of the appraiser . If you would like to refer an appraiser to our panel, however, we do welcome them to apply for consideration of addition at http://streetsmartvaluations.com/jobs.php. Please do not email us names of appraisers you wish to add, or remove from the panel – these requests will not be accommodated.
+        %h6.heading.mb15--force
+          4) How do I place orders on your website?
+        %p.body-text-1
+          Head to http://streetsmartvaluations.com/requestlogin.php to request a login. Once you are set up, you
+          will receive an introduction email and your logins in a second email. You enter your login information at
+          https://streetsmartvaluations.vmpclient.com/SignIn.aspx .
+        %h6.heading.mb15--force
+          5) Hey, the website’s due date is too far out for my transaction. Will the report really take that long?
+        %p.body-text-1
+          The website has a hardcoded “default” date that represents a 7 business day turntime. Most assignments are completed well before then, without you having to ask for a rush. A typical assignment is returned within five days, or sooner. If you have a file that is of particular urgency, there is a rush process. We encourage you to place the date in which you’d like the report back in the “Additional Instructions to Vendor” section of the order form. We will do our best to accommodate your request.
+= render "page_body"

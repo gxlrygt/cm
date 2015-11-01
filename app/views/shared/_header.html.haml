@@ -1,0 +1,112 @@
+#overlay-nav
+%section.hello-bar
+  %a.hello-bar__collapse-bt{:href => "#"}
+    CURRENT TURN TIMES =
+    %span.text-dark-gray 24 - 48 HOURS
+  .hello-bar__content
+    .stats
+      %ul
+        %li
+          Drawing Docs:
+          %span #{@current_turn_time_stats.drawing_docs_time}
+        %li
+          Underwriting:
+          %span #{@current_turn_time_stats.underwriting_time}
+        %li
+          Conditions:
+          %span #{@current_turn_time_stats.conditions_time}
+        %li
+          Funding:
+          %span #{@current_turn_time_stats.funding_time}
+      %div.times
+        Times shown in days.
+%header.main-header
+  %section.content-wrap
+    %nav.utility
+      %ul.fx-jsb.fx-lc
+        %li#logo
+          = link_to root_path do
+            %h1 Commerce Mortgage
+        %li
+          = link_to "Get Approved", new_broker_approval_form_path
+        - if current_admin_user
+          %li
+            = link_to "Admin", admin_root_path
+        %li#sign-in
+          %a{:href=>"javascript:void(0)"}
+            Sign-In
+          %form{id: "tpo-login", :name => "loginForm", :action => "https://2306676713.secure-onlineorigination.com/TPOLogin.aspx", :method => "POST"}
+            %input{:name => "__EVENTTARGET", :type => "hidden", :value => "ctl01$modulesContainerUserCtl$ctl00$loginModuleThemeButton$linkButton"}
+            %input{:name => "__EVENTARGUMENT", :type => "hidden", :value => ""}
+            %input{:name => "ctl01$modulesContainerUserCtl$ctl00$locationTextBox", :type => "hidden", :value => "https://2306676713.secure-onlineorigination.com/TPOLogin.aspx"}
+            %input{:name => "ctl01$modulesContainerUserCtl$ctl00$labelTextBox", :type => "hidden", :value => "ctl01_modulesContainerUserCtl_ctl00_labelErrorForLoginModule1"}
+            %div.sign-in-box
+            %ul
+              %li
+                %p
+                  %input{id: "tpo-login-username", name: "loginUserName", placeholder: "Username", type: "text", value: "", required: "true"}
+              %li
+                %p
+                  %input{id: "tpo-login-password", name: "loginPassword", placeholder: "Password", type: "password", value: "", required: "true"}
+              %li
+                %span{id: "tpo-login-spinner", style: "display:none;"}
+                  = image_tag("ajax-loader.gif")
+                %span.text-dark-gray.fs14{id: "tpo-login-message", style: "display:none;"}
+              %li
+                %input{"ng-disabled" => "loginForm.$invalid", :type => "submit", :value => "TPO LOGIN", :class=>"bt-cta bt-cta--secondary bt-cta--red"}
+              %li.text-dark-gray.fs14
+                Need Help?
+                = link_to "Contact Us.", about_contact_us_path
+              %li.text-dark-gray.fs14
+                %a.link--red{:href=>"mailto:brokers@commercemtg.com"} brokers@commercemtg.com
+                or
+                %br
+                %b 949.423.3026
+                for login issues.
+        %li.loan-bt
+          = link_to "Submit a Loan", new_loan_path
+        %li.hamburger-bt
+          %a#sidebar-bt{:href => "#"} Sub-Menu
+.sidebar
+  .footer__border
+  %nav.sidebar__main
+    %a.sidebar__close{:href=>"javascript:void(0)"} X
+    %ul.side-nav
+      %li.main
+        Loan Programs
+      %li
+        = link_to "Jumbo", loan_programs_path
+      %li
+        = link_to "Conventional", loan_programs_conventional_path
+      %li
+        = link_to "ARMs", loan_programs_arms_path
+      %li
+        = link_to "HARP", loan_programs_harp_path
+      %li
+        = link_to "Government", loan_programs_government_path
+      %li.main
+        Broker Center
+      %li
+        = link_to "Rates", broker_center_path
+      %li
+        = link_to "Quick Pricer", broker_center_quick_pricer_path
+      %li
+        = link_to "Resources", broker_center_resources_path
+      %li
+        = link_to "Appraisals", broker_center_appraisals_path
+      %li
+        = link_to "Get Approved", new_broker_approval_form_path
+      %li
+        = link_to "Submit a Loan", new_loan_path
+      %li.main
+        About Us
+      %li
+        = link_to "Our Approach", about_path
+      %li
+        = link_to "Our Team", about_team_path
+      %li
+        = link_to "Latest News", about_latest_news_path
+      %li
+        = link_to "Join Us", about_join_us_path
+      %li
+        = link_to "Contact Us", about_contact_us_path

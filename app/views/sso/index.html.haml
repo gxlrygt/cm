@@ -1,0 +1,36 @@
+%section.hero-content.hero-broker
+  %section.content-wrap
+    %h1.title
+      SSO TEST
+%article
+  - if @commercemtg_partners_inputs.present?
+    %h5 Commerce Mortgage Partners (TPO) Login
+    %form{:action => "https://2306676713.secure-onlineorigination.com/TPOLogin.aspx", :method => "POST"}
+      - @commercemtg_partners_inputs.each do |input|
+        - next if input.attributes['name'].nil?
+        %input{:name => "#{input.attributes['name'].value}", :type => "#{input.attributes['type'].value}", :value => "#{input.attributes['value'].try(:value) || ''}"}/
+      %input{:name => "__EVENTTARGET", :type => "hidden", :value => "ctl01$modulesContainerUserCtl$ctl00$loginModuleThemeButton$linkButton"}/
+      %input{:name => "__EVENTARGUMENT", :type => "hidden", :value => ""}/
+      %input{:name => "loginUserName", :placeholder => "Username", :type => "text", :value => ""}/
+      %input{:name => "loginPassword", :placeholder => "Password", :type => "password", :value => ""}/
+      %input{:name => "ctl01$modulesContainerUserCtl$ctl00$locationTextBox", :type => "hidden", :value => "https://2306676713.secure-onlineorigination.com/TPOLogin.aspx"}/
+      %input{:name => "ctl01$modulesContainerUserCtl$ctl00$labelTextBox", :type => "hidden", :value => "ctl01_modulesContainerUserCtl_ctl00_labelErrorForLoginModule1"}/
+      %input{:type => "submit"}/
+  - if @street_smart_inputs.present?
+    %h5 Street Smart Login
+    %form{:action => "https://streetsmartvaluations.vmpclient.com/SignIn.aspx", :method => "POST"}
+      - @street_smart_inputs.each do |input|
+        %input{:name => "#{input.attributes['name'].value}", :type => "#{input.attributes['type'].value}", :value => "#{input.attributes['value'].value}"}/
+      %input{:name => "__EVENTTARGET", :type => "hidden", :value => "ctl00$ctl00$Main$Main$btnSignIn"}/
+      %input{:name => "__EVENTARGUMENT", :type => "hidden", :value => ""}/
+      %input{:name => "ctl00$ctl00$Main$Main$txtUsername", :placeholder => "Username", :type => "text", :value => ""}/
+      %input{:name => "ctl00$ctl00$Main$Main$txtPassword", :placeholder => "Password", :type => "password", :value => ""}/
+      %input{:name => "ctl00$ctl00$Dialogs$Dialogs$txtEmailAddress", :type => "hidden", :value => ""}/
+      %input{:name => "ctl00$ctl00$Main$Main$btnSignIn.x", :type => "hidden", :value => "54"}/
+      %input{:name => "ctl00$ctl00$Main$Main$btnSignIn.y", :type => "hidden", :value => "40"}/
+      %input{:type => "submit"}/
+  %h5 Optimal Blue Login
+  %form{:action => "https://www.optimalblue.com/optimalblue/index2.aspx", :method => "POST"}
+    %input{:name => "username", :placeholder => "Username", :type => "text", :value => ""}/
+    %input{:name => "password", :placeholder => "Password", :type => "password", :value => ""}/
+    %input{:type => "submit"}/

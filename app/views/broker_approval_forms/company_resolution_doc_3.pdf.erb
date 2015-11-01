@@ -1,0 +1,35 @@
+<article class="company_resolution wrapper">
+  <%= wicked_pdf_image_tag("logo-all-black.png", :class=>"logo") %>  
+  <h2 class="align-center">COMPANY RESOLUTION</h2>
+  <p>
+    The undersigned Corporate Secretary/Manager/General Partner of the following Mortgage Broker Company <%= broker_approval_form.company %> (“Broker”) which is a <%= broker_approval_form.company_type %> organized under the laws of the State of <%= broker_approval_form.state.code %>, hereby certifies that on  <%= broker_approval_form.pretty_date %>, the Board of Directors/Manager/General Partner (circle one) of the Company adopted of approved the following resolution:
+  </p>
+  <p>
+    <ol class="numerical">
+      <li>
+        <p>
+          Broker is authorized to enter into and to comply with the terms and conditions of the Mortgage Broker Agreement (“Broker Agreement”) with Commerce Home Mortgage Wholesale. (“Performance”):
+        </p>
+      </li>
+      <li> 
+        <p>
+          The Following officers, members or partners of Broker, as applicable, are authorized to execute on behalf of Broker the Broker Agreement, the Broker Compensation Addendum, the Broker Application and any and all other agreements, documents, and forms that are required by Commerce Home Mortgage Wholesale to be executed in connection with the Broker Agreement:
+        </p>
+      </li>
+    </ol>
+    <table class="signature_table">
+      <tbody>
+        <tr>  
+          <td colspan="2">Signature of <%= broker_approval_form.broker_of_record %></td>
+          <td colspan="1">Date</td>
+        </tr>
+        <tr>
+          <td colspan="2">Signature of Principal Officer Owner</td>
+          <td colspan="1">Date</td>
+        </tr>
+        <tr>
+          <td colspan="2">Printed Name of Principal Officer Owner</td>
+        <tr>
+      </tbody>
+    </table>
+</article>

@@ -1,0 +1,140 @@
+%article.type-system-rounded.wrapper
+  %p 
+    Hello #{@loan.broker_first_name},
+  %p
+    Thank you for choosing Commerce Home Mortgage Wholesale to submit your loan.
+  %p
+    Below are the necessary steps to complete your loan submission:
+  %ol.list.numerical.wrapper 
+    %li
+      %p Print the attached documents and sign
+    %li
+      %p Upload DU 3.2, Calyx Point, or Encompass file to TPO
+    %li
+      %p Upload the ‘Loan Submission Cover Sheet’, ‘Compensation Attestation’, and all loan documentation to TPO
+    %li
+      %p Click the ‘Submit’ button within TPO when available
+  %p.section-header
+    FHA Specific Documents Required:
+  %ol.list.two-column.wrapper
+    %li 
+      %p 
+        %input{:type => "checkbox", name: "checkbox1"}
+        SSN and Photo ID       
+    %li 
+      %p 
+        %input{:type => "checkbox", name: "checkbox2"}
+        FHA Get a Home Inspection (dated prior to purchase contract)   
+    %li 
+      %p 
+        %input{:type => "checkbox", name: "checkbox3"}
+        FHA Amendatory Clause/Real Estate Cert (signed/dated by all)              
+    %li 
+      %p 
+        %input{:type => "checkbox", name: "checkbox4"}
+        FHA Important Notice to Homebuyer 92900B
+    %li 
+      %p 
+        %input{:type => "checkbox", name: "checkbox5"}
+        FHA Appraisal Value Disclosure        
+    %li 
+      %p 
+        %input{:type => "checkbox", name: "checkbox6"}
+        FHA Informed Consumer Choice Disclosure
+    %li 
+      %p 
+        %input{:type => "checkbox", name: "checkbox7"}
+        FHA Assumption Notice         
+    %li 
+      %p 
+        %input{:type => "checkbox", name: "checkbox8"}
+        FHA Loan Transmittal 92900-LT
+    %li 
+      %p 
+        %input{:type => "checkbox", name: "checkbox9"}
+        FHA Blanket Cert (true/correct copies)      
+    %li 
+      %p 
+        %input{:type => "checkbox", name: "checkbox10"}
+        FHA Refinance Auth (if applicable)
+    %li 
+      %p 
+        %input{:type => "checkbox", name: "checkbox11"}
+        FHA Case Assignment         
+    %li 
+      %p 
+        %input{:type => "checkbox", name: "checkbox12"}
+        FHA Completed LDP and GSA lists
+    %li 
+      %p 
+        %input{:type => "checkbox", name: "checkbox13"}
+        HUD 92900A Addendum (signed/dated by all)
+  %p.section-header
+    General Loan Documents Required:
+  %ol.list.two-column.wrapper 
+    %li 
+      %p 
+        %input{:type => "checkbox", name: "checkbox14"}
+        Broker Typed 1008/1003          
+    %li 
+      %p 
+        %input{:type => "checkbox", name: "checkbox15"}
+        Initial 1003 and LT 92900A (executed by all)
+    %li 
+      %p 
+        %input{:type => "checkbox", name: "checkbox16"}
+        Initial Good Faith Estimate, Fees Worksheet & Settlement Provider List        
+    %li 
+      %p 
+        %input{:type => "checkbox", name: "checkbox17"}
+        Any updated GFEs issued since the initial GFE with completed Changed Circumstance           
+    %li 
+      %p 
+        %input{:type => "checkbox", name: "checkbox18"}
+        Broker Typed 1008/1003          
+    %li 
+      %p 
+        %input{:type => "checkbox", name: "checkbox19"}
+        Anti Steering Disclosure
+    %li 
+      %p 
+        %input{:type => "checkbox", name: "checkbox20"}
+        Intent to Proceed         
+    %li 
+      %p 
+        %input{:type => "checkbox", name: "checkbox21"}
+        Credit Report (less than 45 days old)
+    %li 
+      %p 
+        %input{:type => "checkbox", name: "checkbox22"}
+        Borrower Authorization          
+    %li 
+      %p 
+        %input{:type => "checkbox", name: "checkbox23"}
+        IRS 4506-T (completed/signed)
+    %li 
+      %p 
+        %input{:type => "checkbox", name: "checkbox24"}
+        Local/State Specific disclosures        
+    %li 
+      %p 
+        %input{:type => "checkbox", name: "checkbox25"}
+        Purchase: Purchase Agreement/Contract Refinance: Payoff Statement
+    %li 
+      %p 
+        %input{:type => "checkbox", name: "checkbox26"}
+        Income/Asset Documentation
+    %li 
+      %p 
+        %input{:type => "checkbox", name: "checkbox27"}
+        AUS Findings (Optional)
+  %p
+    %strong Questions? 
+    We are happy to help! Call Client Services at 949.423.3026 or email us at: 
+    %u
+      %a{:href => "mailto:nathaniel@commercemtgwholesale.com"}
+        nathaniel@commercemtgwholesale.com
+
+  %p
+    Sincerely,
+  = render "shared/emails/logo"

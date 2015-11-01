@@ -1,0 +1,28 @@
+- content_for :about_body do
+  %article.sub-page-content
+    %h2.sub-title
+      Our Team
+    %p.slogan
+      %span.fancy_title.last-red CHMW
+      is one of the fastest growing wholesale lenders in the United States.
+    %h3
+      Meet the Crew
+    %p.paragraph
+      Based on a business model that puts our partners first, UWM has seen significant growth in the last few years, most recently becoming the number one wholesale lender in the country in origination volume. We believe in not just guiding a loan through the process, but in truly helping our clients, growing their business, and giving them tools they can use to become successful. We are constantly innovating and rolling out new products, resources, and solutions that assist Brokers and further cement our commitment to partnership. At UWM, we’ve always believed in being relationship-driven—not transaction-driven—and we will continue to do so for the next 25 years and beyond!
+    #main
+      %ul#team-items.team-items{"ng-init" => "team_members = #{@team_members.to_json};", "ng-cloak" => true}
+        %li{:class => "grid-item", "ng-repeat" => "team_member in team_members"}
+          %a{href: "javascript:void(0)", "ng-click" => "team_members.chosen=team_member"}
+            %img.red{"ng-src" => "{{team_member.imageRed}}"}
+            %img{"ng-src" => "{{team_member.image}}"}
+        %li.team-item--bio.none
+          %div{"ng-repeat" => "team_member in team_members"} 
+            %div{"ng-show" => "team_members.chosen==team_member", :class => "fade block-border"}
+              %h3
+                {{team_member.name}},
+                %span
+                  {{team_member.title}}
+              %p
+                {{team_member.desc}}
+
+= render "page_body"

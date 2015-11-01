@@ -1,0 +1,9 @@
+.git
+.gitignore
+log/*
+tmp/*
+Procfile*
+.bundle
+tags
+README.rdoc
+

@@ -1,0 +1,9 @@
+%h1 Products
+%table.table.table-hover
+  %thead
+    %tr
+      %th Name
+  %tbody
+    - @products.each do |product|
+      %tr
+        %td= link_to(product.name, product)

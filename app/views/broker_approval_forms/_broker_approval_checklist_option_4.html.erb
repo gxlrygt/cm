@@ -1,0 +1,93 @@
+<article class="type-system-rounded wrapper">
+  <p>
+    Hello <%= @broker_approval_form.primary_contact.split(" ")[0] %>,
+  </p>
+
+  <p>
+    Thank you for your interest in becoming an approved broker with Commerce Home Mortgage Wholesale.
+  </p>
+
+  <p class="section-header">
+    PLEASE COMPLETE THE FOLLOWING:
+  </p>
+
+  <ol class="list numerical">
+    <li>
+      <p>
+        Enroll with Comergence, or ensure your account information has been fully ‘Submitted’. <u><a href='www.commercemtgwholesale.com/comergence'>www.commercemtgwholesale.com/comergence</a></u>
+      </p>
+    </li>
+    <li>
+      <p>
+        Print, then complete and sign the package attached.
+      </p>
+    </li>
+    <li>
+      <p>
+        Include the remaining checklist items shown below.
+      </p>
+    </li>
+    <li>
+      <p>
+        Email all checklist items (listed below) to <u><a href="mailto:brokers@commercemtgwholesale.com">brokers@commercemtgwholesale.com</a></u> or fax 949.423.3022
+      </p>
+    </li>
+  </ol>
+  <section>
+    <p>
+      Final Broker approval, FHA and VA sponsorship is contingent upon receipt and review of all broker approval requirements.
+    </p>
+    <p>
+      We estimate 5 business days from the date of all required or requested additional items.  VA sponsorship approval is subject to Department of Veterans Affairs turn times, unless VA Agent ID has been established previously.
+    </p>
+    <p class="section-header">
+      BROKER APPLICATION CHECKLIST
+    </p>
+    <p>
+      <ol class="list">
+        <li>
+          <p>
+            <input type="checkbox" name="checkbox1"> Mortgage Broker Application (Attached) (Wet Signatures only)
+          </p>
+        </li>
+        <li>
+          <p>
+            <input type="checkbox" name="checkbox2"> FHA Sponsorship (Attached)
+          </p>
+        </li>
+        <li>
+          <p>
+            <input type="checkbox" name="checkbox3"> VA Sponsorship (Attached)
+          </p>
+        </li>
+        <li>
+          <p>
+            <input type="checkbox" name="checkbox4"> $100 check made payable to ‘Department of Veterans Affairs’
+          </p>
+        </li>
+        <li>
+          <p>
+            <input type="checkbox" name="checkbox5"> Current YTD Financials, P&L and Cash Balance Sheet (dated within 90 days, wet signatures only)
+          </p>
+        </li>
+        <li>
+          <p>
+            <input type="checkbox" name="checkbox6"> IRS W-9 Form
+          </p>
+        </li>
+        <li>
+          <p>
+            <input type="checkbox" name="checkbox7"> Resumes of Principal Officers
+          </p>
+        </li>
+      </ol>
+    </p>
+  </section>
+  <p>
+    <strong>Questions?</strong> We are happy to help! Call Client Services at 949.423.3026 or email us at: <u><a href="mailto:nathaniel@commercemtgwholesale.com">nathaniel@commercemtgwholesale.com</a></u>
+  </p>
+  <p>
+    Sincerely,
+  </p>
+  <%= render "shared/emails/logo" %>
+</article>

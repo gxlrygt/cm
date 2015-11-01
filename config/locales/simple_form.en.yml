@@ -1,0 +1,107 @@
+en:
+  simple_form:
+    "yes": 'Yes'
+    "no": 'No'
+    required:
+      text: 'required'
+      mark: '*'
+      # You can uncomment the line below if you need to overwrite the whole required html.
+      # When using html, text and mark won't be used.
+      # html: '<abbr title="required">*</abbr>'
+    error_notification:
+      default_message: "Please review the problems below:"
+    # Examples
+    # labels:
+    #   defaults:
+    #     password: 'Password'
+    #   user:
+    #     new:
+    #       email: 'E-mail to sign in.'
+    #     edit:
+    #       email: 'E-mail.'
+    # hints:
+    #   defaults:
+    #     username: 'User name to sign in.'
+    #     password: 'No special characters, please.'
+    # include_blanks:
+    #   defaults:
+    #     age: 'Rather not say'
+    # prompts:
+    #   defaults:
+    #     age: 'Select your age'
+    labels:
+      broker_approval_form:
+        nmls: 'Company NMLS'
+        company_president: 'Company President'
+        broker_of_record: 'Broker of Record'
+        dba: 'DBA'
+        loan_types: "I want to get approved for the following loan types:"
+        phone: 'Phone'
+        primary_contact: 'Primary Contact'
+        how_did_you_find_us_account_executive_name: 'Account Executive Name'
+        how_did_you_find_us_other: 'Other'
+
+    placeholders:
+      broker_approval_form:
+        company: 'Business Name'
+        dba: 'DBA'
+        broker_of_record: 'Broker of Record'
+        nmls: 'NMLS'
+        address: 'Street Address'
+        city: 'City'
+        zip: 'Zipcode'
+        title: 'Title'
+        phone: 'Phone Number'
+        email: 'Email'  
+        tpo_user_access_requests:
+          index:
+            first_name: 'First Name'
+            last_name: 'Last Name'
+            email: 'Email'
+      loan:
+        lender_compensation: 'Lender Comp %'
+        broker_first_name: 'First Name'
+        broker_last_name: 'Last Name'
+        broker_phone: 'Phone Number'
+        broker_email: 'Email'
+        processor_first_name: 'First Name'
+        processor_last_name: 'Last Name'
+        processor_phone: 'Phone Number'
+        processor_email: 'Email'
+        address: 'Street Address'
+        city: 'City'
+        zip: 'Zip'
+        borrower_first_name: 'First Name'
+        borrower_last_name: 'Last Name'
+        borrower_email: 'Email'
+        borrower_phone: 'Phone Number'
+        coborrower_first_name: 'First Name'
+        coborrower_last_name: 'Last Name'
+        coborrower_email: 'Email'
+        coborrower_phone: 'Phone Number'
+        borrower_mid_fico_score: 'Mid Fico'
+        coborrower_mid_fico_score: 'Mid Fico'
+        property_value: 'Property Value'
+        loan_amount: 'New Loan Amount'
+        disclosed_rate_pct: 'Disclosed Rate %'
+        ltv: 'LTV'
+        cltv: 'CLTV'
+        #additional_details: ' '
+    prompts:
+      broker_approval_form:
+        company_type: 'Company Type'
+        how_did_you_find_us: 'How Did You Find Us?'
+        how_did_you_find_us_account_executive_name: 'Account Executive Name'
+        how_did_you_find_us_other: 'other'
+      loan:
+        account_executive: 'Account Executive'
+        lender_or_borrower_paid: 'Borr/Lender Paid?'
+        underwriting_fee_buyout: 'U/W Fee Buyout'
+        impounds_or_escrows: 'Impounds'
+        loan_type: 'Loan Type'
+        transaction_type: ' Transaction Type'
+        fha_underwriting_type: 'FHA U/W'
+        term: 'Term'
+        property_type: 'Property Type'
+        appraisal_needed: 'Appraisal?'
+        occupancy: 'Occupancy'

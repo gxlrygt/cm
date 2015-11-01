@@ -1,0 +1,43 @@
+- content_for :broker_center_body do
+  %article.sub-page-content
+    %h2.sub-title
+      Get Approved
+    %p.slogan THANK YOU! YOUR Partner APPLICATION has been received.
+    %h2.heading.mb15 Please check your email for the following additional steps:
+    %ul.order--number.mb40--force
+      %li Enroll with Comergence, or ensure account has been fully ‘Submitted’
+      %li 
+        Print and sign 
+        %span.fancy_title.last-red CHMW 
+        legal agreement
+      %li Gather company financials, P&L, W-9, Principle Officer resumes
+      %li
+        Email all documentation listed above to
+        %a{href: "mailto:brokers@commercemtgwholesale.com"} brokers@chmwholesale.com
+        %br or fax to (949)423-3022.
+    %p.body-text-1 Final approval is contingent upon receipt and review of all requirements listed above. We will reach out to you within five business days from the date the documents have been received. 
+    %h3
+      Download These PDFs:
+    %ul
+      %li
+        = link_to "Download Company Resolution Doc 3", company_resolution_doc_3_broker_approval_form_path(@broker_approval_form, format: "pdf")
+      %li
+        = link_to "Download Company Resolution Doc 4", company_resolution_doc_4_broker_approval_form_path(@broker_approval_form, format: "pdf")
+      %li
+        = link_to "Download Fair Lending Acknowledgement", fair_lending_acknowledgement_broker_approval_form_path(@broker_approval_form, format: "pdf")
+      %li
+        = link_to "Download FHA Sponsorship", fha_sponsorship_broker_approval_form_path(@broker_approval_form, format: "pdf")
+      %li
+        = link_to "Download Loan Fraud", loan_fraud_broker_approval_form_path(@broker_approval_form, format: "pdf")
+      %li
+        = link_to "Download Mortgage Broker Agreement", mortgage_broker_agreement_broker_approval_form_path(@broker_approval_form, format: "pdf")
+      %li
+        = link_to "Download Quality Control & Compliance Agreement", quality_control_broker_approval_form_path(@broker_approval_form, format: "pdf")
+      %li
+        = link_to "Download RESPA", respa_broker_approval_form_path(@broker_approval_form, format: "pdf")
+      %li
+        = link_to "Download Sales Compensation", sales_compensation_broker_approval_form_path(@broker_approval_form, format: "pdf")
+      %li
+        = link_to "Download VA Sponsorship", va_sponsorship_broker_approval_form_path(@broker_approval_form, format: "pdf")
+= render "broker_center/page_body"
+

@@ -1,0 +1,23 @@
+%section.hero-content.hero-loan
+  .js-parallax-window.parallax-window
+    .parallax-static-content
+      %section.content-wrap
+        %h1.title
+          Loan Programs
+    .js-parallax-background.parallax-background
+%section.content-wrap
+  %nav.sub-page-sidebar
+    %ul
+      %li
+        = link_to "Jumbo", loan_programs_path, class: "#{action_name == 'index' ? 'active' : ''}"
+      %li
+        = link_to "Conventional", loan_programs_conventional_path, class: "#{action_name == 'conventional' ? 'active' : ''}"
+      %li
+        = link_to "ARMs", loan_programs_arms_path, class: "#{action_name == 'arms' ? 'active' : ''}"
+      %li
+        = link_to "HARP", loan_programs_harp_path, class: "#{action_name == 'harp' ? 'active' : ''}"
+      %li
+        = link_to "Government", loan_programs_government_path, class: "#{action_name == 'government' ? 'active' : ''}"
+
+  - if content_for? :loan_programs_body
+    = yield :loan_programs_body

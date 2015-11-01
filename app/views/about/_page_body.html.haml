@@ -1,0 +1,23 @@
+%section.hero-content.hero-about
+  .js-parallax-window.parallax-window
+    .parallax-static-content
+      %section.content-wrap
+        %h1.title
+          About Us
+    .js-parallax-background.parallax-background
+%section.content-wrap
+  %nav.sub-page-sidebar
+    %ul
+      %li
+        = link_to "Our Approach", about_path, class: "#{action_name == 'index' ? 'active' : ''}"
+      %li
+        = link_to "Our Team", about_team_path, class: "#{action_name == 'team' ? 'active' : ''}"
+      %li
+        = link_to "Latest News", about_latest_news_path, class: "#{action_name == 'latest_news' ? 'active' : ''}"
+      %li
+        = link_to "Join Us", about_join_us_path, class: "#{action_name == 'join_us' ? 'active' : ''}"
+      %li
+        = link_to "Contact Us", about_contact_us_path, class: "#{action_name == 'contact_us' ? 'active' : ''}"
+
+  - if content_for? :about_body
+    = yield :about_body

@@ -1,0 +1,110 @@
+%p Somebody has submitted a loan on Commerce Wholesale. The details are:
+%ul
+  %li
+    %strong Account Executive
+    = @loan.account_executive
+  %li
+    %strong Lender or Borrower Paid?
+    = @loan.lender_or_borrower_paid
+  %li
+    %strong Underwriting Fee Buyout
+    = @loan.underwriting_fee_buyout
+  %li
+    %strong Lender Compensation
+    = @loan.lender_compensation
+  %li
+    %strong Broker
+    = "#{@loan.broker_first_name} #{@loan.broker_last_name}"
+  %li
+    %strong Broker Phone
+    = @loan.broker_phone
+  %li
+    %strong Broker Email
+    = @loan.broker_email
+  %li
+    %strong Processor
+    = "#{@loan.processor_first_name} #{@loan.processor_last_name}"
+  %li
+    %strong Processor Phone
+    = @loan.processor_phone
+  %li
+    %strong Processor Email
+    = @loan.processor_email
+  %li
+    %strong Address
+    = @loan.address
+  %li
+    %strong City
+    = @loan.city
+  %li
+    %strong State
+    = @loan.state.code if @loan.state
+  %li
+    %strong Zip
+    = @loan.zip
+  %li
+    %strong Borrower
+    = "#{@loan.borrower_first_name} #{@loan.borrower_last_name}"
+  %li
+    %strong Borrower Email
+    = @loan.borrower_email
+  %li
+    %strong Borrower Mid FICO Score
+    = @loan.borrower_mid_fico_score
+  %li
+    %strong Borrower Phone
+    = @loan.borrower_phone
+  %li
+    %strong Coborrower
+    = "#{@loan.coborrower_first_name} #{@loan.coborrower_last_name}"
+  %li
+    %strong Coborrower Email
+    = @loan.coborrower_email
+  %li
+    %strong Coborrower Mid FICO Score
+    = @loan.coborrower_mid_fico_score
+  %li
+    %strong Coborrower Phone
+    = @loan.coborrower_phone
+  %li
+    %strong Property Value
+    = @loan.property_value
+  %li
+    %strong Loan Amount
+    = @loan.loan_amount
+  %li
+    %strong Disclosed Rate %
+    = @loan.disclosed_rate_pct
+  %li
+    %strong LTV
+    = @loan.ltv
+  %li
+    %strong CLTV
+    = @loan.cltv
+  %li
+    %strong Impounds or Escrows?
+    = @loan.impounds_or_escrows
+  %li
+    %strong Loan Type
+    = @loan.loan_type
+  %li
+    %strong Transaction Type
+    = @loan.transaction_type
+  %li
+    %strong FHA Underwriting Type
+    = @loan.fha_underwriting_type
+  %li
+    %strong Term
+    = @loan.term
+  %li
+    %strong Property Type
+    = @loan.property_type
+  %li
+    %strong Appraisal Needed?
+    = @loan.appraisal_needed
+  %li
+    %strong Occupancy
+    = @loan.occupancy
+  %li
+    %strong Additional Details
+    = @loan.additional_details

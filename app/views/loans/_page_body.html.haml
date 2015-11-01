@@ -1,0 +1,7 @@
+%section.hero-content.hero-loan
+  %section.content-wrap
+    %h1.title
+      Submit a Loan
+%section.content-wrap
+  - if content_for? :loan_body
+    = yield :loan_body

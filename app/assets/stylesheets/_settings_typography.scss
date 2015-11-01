@@ -1,0 +1,170 @@
+h1,h2,h3,h4,h5 {
+  @extend .font-roboto;
+}
+h1 {
+  &.heading {
+    @extend .font-roboto-condensed;
+    font-size: 38px;
+    line-height: 44px;
+    letter-spacing: 0;
+    color:$wh-dark-gray;
+    font-weight: 300;
+  }
+
+}
+h2 {
+  font-size: 52px;
+  &.heading {
+    @extend .font-roboto;
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 700;
+    color:$wh-dark-gray;
+  }
+}
+
+h3 {
+  font-size: 26px;
+  font-weight: 500;
+  &.heading {
+    font-size: 24px;
+    @extend .font-roboto;
+    font-weight: 300;
+    line-height: 30px;
+    letter-spacing: -1px;
+    color:$wh-dark-gray;
+  }
+}
+
+h4 {
+  font-size: 28px;
+  line-height: 30px;
+  &.heading {
+    font-size: 60px;
+    @extend .font-roboto;
+    font-weight: 100;
+    line-height: 1.2;
+    color:$wh-dark-gray;
+  }
+}
+h5 {
+  &.heading {
+    font-size: 40px;
+    @extend .font-roboto;
+    font-weight: 100;
+    color:$wh-dark-gray;
+  }
+}
+
+h6 {
+  &.heading{
+    font-size: 18px;
+    @extend .font-roboto;
+    font-weight: 600;
+  &--red{  
+    color:$wh-red !important;
+    }
+  }
+}
+
+.body-text-1{
+  @extend .font-roboto;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 26px;
+}
+
+.body-text-2{
+  @extend .font-roboto;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 24px;
+  letter-spacing: 1.2px;
+}
+.ul-indent{
+  @extend .font-roboto;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 20px;
+}
+.quote-1{
+  @extend .font-roboto-condensed;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 24px;
+
+}
+.quote-2{
+  @extend .font-roboto-condensed;
+  font-size: 34px;
+  font-weight: 300;
+  line-height: 40px;
+
+}
+.bold{
+  font-weight: 700;
+  &--force{
+    font-weight: 700 !important;
+  }
+}
+.medium {
+  font-weight: 500;
+  &--force{
+    font-weight: 500 !important;
+
+  }
+}
+.normal{
+  font-weight: 400;
+  &--force{
+    font-weight: 400 !important;
+  }
+}
+.light {
+  font-weight: 300;
+  &--force {
+    font-weight: 300 !important;
+  }
+}
+
+.fs11 {
+  font-size: 11px;
+}
+.fs14 {
+  font-size: 14px;
+}
+.fs16 {
+  font-size: 16px;
+}
+.fs18 {
+  font-size: 18px;
+}
+.fs34 {
+  font-size: 34px;
+}
+
+.numerical,
+.alphabetical {
+  padding-left: 25px;
+  line-height: 30px;
+  margin-bottom: 1em;
+}
+
+.tcr {
+  color: $wh-red;
+}
+
+.numerical  > li {
+  list-style-type: decimal;
+}
+
+.alphabetical > li {
+  list-style: none;
+  position: relative;
+  counter-increment: list;
+}
+.alphabetical > li:before {
+  content: counter(list, lower-alpha) ") ";
+  position: absolute;
+  left: -1.4em;
+}

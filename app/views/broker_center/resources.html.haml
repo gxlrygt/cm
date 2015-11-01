@@ -1,0 +1,451 @@
+- content_for :broker_center_body do
+  %article.sub-page-content
+    %h2.sub-title
+      Resources
+    %p.slogan
+      Key info for doing business with
+      %span.fancy_title.last-red CHMW.
+    %h2.heading
+      %span.fancy_title.last-red CHMW
+      Broker Resources
+    .collapse
+      %div.collapse__header
+        Loan Registration Steps
+        %span.arrow
+      %div.collapse__content
+        %p.body-text-1
+          To start a new loan in our system you must complete Loan Actions in the following sequence. 
+        %ol.order--number
+          %li
+            %h6.heading.mb0--force
+              Click "New Loan" from the Welcome page.
+            %p.body-text-1
+              Input basic information, and upload DU 3.2 file (*.fnm), or manually input loan information.
+          %li
+            %h6.heading.mb0--force
+              Click "Register Loan" from the Loan Details page.
+            %p.body-text-1
+              Complete the loan details by going through each page, completing all of the information on each page, and clicking Next to continue to the next page to complete all of the required information necessary to register the loan. When you register the loan, you will be required to upload the following documents into the Initial Disclosures shell. When complete, click Register Loan.
+            %ul.order--line.mb40.ul-indent
+              %li GFE (Broker Provided) 
+              %li TIL (Broker Provided)
+              %li Anti-Steering Disclosure (Broker Provided)
+              %li Credit Authorization Form (Borrowers Authorization)
+              %li Mortgage Broker Fee Disclosure (Broker Provided)
+              %li Settlement Service List of Provider (Broker Provided)
+              %li State Specific Disclosures
+            %h6.heading.bold--force
+              California
+            %ul.order--line.mb40.ul-indent
+              %li Notice to Home Loan Applicant (Credit Score Disclosure)
+              %li MLDS
+              %li ARM Disclosure (If Applicable)
+              %li CA Balloon Disclosure Regarding Extension of Credit and/or Non-Traditional Loan Disclosure (If Applicable)
+            %h6.heading.bold--force
+              Colorado
+            %ul.order--line.mb40.ul-indent
+              %li Consumer Caution Notice
+              %li Tangible Net Benefit Disclosure
+              %li Colorado Lock-in Disclosure 
+              %li Disclosure of Itemized Third Party Fees & Costs
+          %li
+            %h6.heading.mb15--force
+              Click "Order/Reissue Credit" from the Loan Details page
+            %p.body-text-1
+              Please enter DU as the Credit Provider, Enter Your Credit Provider in the DU Credit Provider drop down; enter your User Name and Password for your Credit Provider, and Save DU Credit Provider and Login; Click the Reissue button; enter the Credit Report Reference Number and click “Jointly” if it is a joint report.  When complete you are able to move forward to the next step of your choice, Automated Underwriting, Product and Pricing, Submit Loan, Changed Circumstance, Import Additional Data.
+        %p.body-text-1
+          %span.bold
+            Please Note: 
+          Loan Actions require you to actually click on the Loan Action link on the left hand side of the screen to begin the process of that Loan Action. Loan Actions that are grayed out cannot be taken until the prior Loan Action is taken. Each Loan Action step follows the same process of clicking the Loan Action button on the left hand side of the screen, completing all required information, and clicking the corresponding Loan Action button at the end of each step. If you do not see a button, you haven’t completed all of the required fields for that action—not all required fields are asterisked. 
+      %div.collapse__header
+        Possible Change of Circumstance
+        %span.arrow
+      %div.collapse__content 
+        %p.body-text-1
+          If you have a change specifically mentioned below, then only the fee directly associated to this can change. You must re-disclose within 3 days of the changed circumstance. For example, parties are added or removed from title—you cannot decide to charge more on the appraisal—that wouldn’t make sense. Credit however, may increase if you are adding a party and need to pull their report. The concept here is that only the fee directly tied to the changed circumstance is changing. 
+        %h6.heading.bold--force
+          Changed Circumstances–Specified By HUD
+        %ol.numerical.normal
+          %li 
+            %p.body-text-1
+              Acts of war, disaster, or other emergency.
+          %li 
+            %p.body-text-1 
+              Information provided by the borrower or transaction that was relied on in providing the GFE either changes or is found to be   inaccurate after the GFE has been provided.
+            %ol.alphabetical.medium--force
+              %li Could include quality of the borrower
+              %li Loan Amount
+              %li Estimated Value
+              %li Locking of Loan–Important Dates
+          %li 
+            %p.body-text-1
+              New informatin particular to the borrower or transation that was not relied on in providing the GFE.
+          %li 
+            %p.body-text-1
+              Circumstances particular to the borrower or transaction including boundary disputes, need for flood insurance or environmental problems.
+          %Li
+            %p.body-text-1
+              Discovery of additional documents (such as releases) that must be recorded causing an increase in recording fees.
+          %li
+            %p.body-text-1
+              If the borrower does not proceed with the terms outlined in the GFE and the GFE expires (fees good through:____).
+          %li
+            %p.body-text-1
+              Property address turns out to not be the correct, legal address—fees affected by the address can change.
+          %li
+            %p.body-text-1
+              Parties are added or removed from title or property is moved out of a trust—only fees associated with this can change.
+          %li
+            %p.body-text-1
+              Property use changes—only fees tied to occupancy may change.
+          %li
+            %p.body-text-1
+              Credit policy is required to change after the GFE is issued due to regulatory changes such as fees charged by government agencies for recording fees or taxes change after the GFE is issued and the Loan Originator did not have notice of changes prior to issuance—fees can be updated and re-disclosed.
+          %li
+            %p.body-text-1
+              After the GFE is issued, it is determined that additional services such as an additional pest, structural or other inspection, upgraded appraisal, certification, survey or other requirement is required by the loan originator in connection with the transaction.
+      %div.collapse__header
+        RESPA Fee Guide
+        %span.arrow
+      %div.collapse__content 
+        .matrices.color-steps.color-steps--matrix-left
+          %table
+            %tbody
+              %thead  
+                %tr
+                  %td{:colspan=>"2"} 
+                    Fee Name
+                  %td{:colspan=>"1"}
+                    GFE Block
+                  %td{:colspan=>"2"} 
+                    Fee Name
+                  %td{:colspan=>"1"}
+                    GFE Block
+              %tr
+                %td{:colspan=>"2"} 
+                  Abstract or Title Search
+                %td
+                  4  
+                %td{:colspan=>"2"} 
+                  Administration Fee
+                %td
+                  1
+              %tr
+                %td{:colspan=>"2"} 
+                  Appraisal Fee
+                %td
+                  3  
+                %td{:colspan=>"2"} 
+                  Appraisal Re-Inspection Fee
+                %td
+                  3
+              %tr
+                %td{:colspan=>"2"} 
+                  Appraisal Field Review
+                %td
+                  3  
+                %td{:colspan=>"2"} 
+                  Broker Courier Fee
+                %td
+                  1
+              %tr
+                %td{:colspan=>"2"} 
+                  Broker Document Storage Fee
+                %td
+                  1  
+                %td{:colspan=>"2"} 
+                  Broker Scan Fee
+                %td
+                  1
+              %tr
+                %td{:colspan=>"2"} 
+                  City/County Tax Stamps
+                %td
+                  8  
+                %td{:colspan=>"2"} 
+                  Credit Report Fee
+                %td
+                  3
+              %tr
+                %td{:colspan=>"2"} 
+                  E-Doc Title Fee
+                %td
+                  4  
+                %td{:colspan=>"2"} 
+                  Flood Certification
+                %td
+                  3
+              %tr
+                %td{:colspan=>"2"} 
+                  Flood Insurance (Prepaid)
+                %td
+                  11 
+                %td{:colspan=>"2"} 
+                  Flood Insurance (Reserves)
+                %td
+                  9
+              %tr
+                %td{:colspan=>"2"} 
+                  Hazard Inspection
+                %td
+                  6  
+                %td{:colspan=>"2"} 
+                  Hazard Insurance (Prepaid)
+                %td
+                  11
+              %tr
+                %td{:colspan=>"2"} 
+                  Hazard Insurance (Reserves)
+                %td
+                  9  
+                %td{:colspan=>"2"} 
+                  Lender Title Insurance
+                %td
+                  4
+              %tr
+                %td{:colspan=>"2"} 
+                  Loan Discount
+                %td
+                  2  
+                %td{:colspan=>"2"} 
+                  Loan Origination
+                %td
+                  1
+              %tr
+                %td{:colspan=>"2"} 
+                  Mortgage Broker Fee
+                %td
+                  1  
+                %td{:colspan=>"2"} 
+                  Mortgage Insurance (Reserves)
+                %td
+                  9
+              %tr
+                %td{:colspan => "2"}
+                  Mortgage Insurance Premium (Prepaid)
+                %td
+                  3
+                %td{:colspan => "2"}
+                  Notary/Signing Fee
+                %td
+                  4
+              %tr
+                %td{:colspan => "2"}
+                  Owner's Title Insurance
+                %td
+                  5
+                %td{:colspan => "2"}
+                  Per Diem (Prepaid)
+                %td
+                  10
+              %tr
+                %td{:colspan => "2"}
+                  Pest Inspection
+                %td
+                  6
+                %td{:colspan => "2"}
+                  Processing Fee
+                %td
+                  1
+              %tr
+                %td{:colspan => "2"}
+                  Property Inspection Waiver
+                %td
+                  3
+                %td{:colspan => "2"}
+                  Property Taxes (Reserves)
+                %td
+                  9
+              %tr
+                %td{:colspan => "2"}
+                  Reconveyance Fee
+                %td
+                  4
+                %td{:colspan => "2"}
+                  Recording Fee
+                %td
+                  7
+              %tr
+                %td{:colspan => "2"}
+                  School Tax (Reserves)
+                %td
+                  9
+                %td{:colspan => "2"}
+                  State Tax/ Stamps
+                %td
+                  8
+              %tr
+                %td{:colspan => "2"}
+                  Subordination Fee
+                %td
+                  3
+                %td{:colspan => "2"}
+                  Tax Certification Fee
+                %td
+                  4
+              %tr
+                %td{:colspan => "2"}
+                  Tax Service Fee
+                %td
+                  3
+                %td{:colspan => "2"}
+                  Title Courier Fee
+                %td
+                  4
+              %tr
+                %td{:colspan => "2"}
+                  Title Doc Prep Fee
+                %td
+                  4
+                %td{:colspan => "2"}
+                  Title Document Storage Fee
+                %td
+                  4
+              %tr  
+                %td{:colspan => "2"}
+                  Title Endorsement Fee
+                %td
+                  4
+                %td{:colspan => "2"}
+                  Title Examination Fee
+                %td
+                  4
+              %tr  
+                %td{:colspan => "2"}
+                  Title REquired Survey
+                %td
+                  4
+                %td{:colspan => "2"}
+                  Underwriting Fee
+                %td
+                  1
+              %tr  
+                %td{:colspan => "2"}
+                  USDA Guarantee Fee
+                %td
+                  3
+                %td{:colspan => "2"}
+                  VA Funding Fee (Prepaid)
+                %td
+                  3
+              %tr  
+                %td{:colspan => "2"}
+                  Wire Transfer Fee
+                %td
+                  4
+                %td{:colspan => "2"}
+                  YSP
+                %td
+                  1,2
+      %div.collapse__header
+        Lock Policy
+        %span.arrow
+      %div.collapse__content
+        %h6.heading
+          LOCK EXTENSIONS
+        %p.body-text-1
+          Brokers may submit requests to Commerce Home Mortgage Wholesale for an extension of time to close a loan that has been locked. A lock can be extended for any of the time periods listed below, but will not be extended more than twice or for more than a total of 30 days from the expiration date of the original rate lock commitment. 
+        %p.body-text-1
+          If the request is approved, the price for the extension will be adjusted as follows: 
+          %ul.alphabetical
+            %li .15 for 5 days
+            %li .30 for 15 days
+            %li .50 for 30 days.
+        %p.body-text-1
+          It is expected that the cost of any extension is incurred by the borrower, which may trigger re-disclosure due to change of circumstances. Loans that have not yet reached the Underwriting queue will not be eligible for extension.
+        %h6.heading
+          Lock Renegotiations– Conforming and Government Product Only 
+        %p.body-text-1
+          To be eligible for such consideration, the loan must be submitted to underwriting, AND the appraisal must have been ordered.  
+          %ol.order--number
+            %li  
+              %p
+                The market price improvement must be equal to or greater than 100 bps (1%) to be eligible for a Lock Renegotiation.
+            %li
+              %p
+                If the improvement is between 100–175 bps at the initial locked rate, new pricing will be calculated by taking current market price at desired rate, same lock period, less a .5 renegotiation fee. In the event market has improved more than 175 bps, please call lock desk for renegotiation options. ALL benefit as a result of any renegotiation must accrue 100% to the benefit of the borrower (e.g. reduced rate or increased borrower credit).
+        %p.body-text-1
+          Lock Renegotiations are available on a one time basis only so any price improvement after a lock has been renegotiated once already will not be eligible for further renegotiation.
+        %p.body-text-1
+          The Lock Renegotiation policy as outlined above applies to Conforming and Government product only. For Lock Renegotiations related to Non-Conforming and Specialty Products, please contact your AE for options.
+        %h6.heading
+          Lock Cancellations/Expirations
+        %p.body-text-1
+          In an effort to maximize hedge efficiency, any locked loan that is identified as not closing,must be communicated to Commerce Home Mortgage Wholesale immediately via e-mail. Any lock that has been either canceled or expired without closing or being extended must go through a 30 calendar day waiting period to be eligible for re-lock. Please cancel your locks on inactive loans via email with your Account Manager. Any re-lock request under consideration during the 30 day waiting period will be subject to worst case pricing.
+        %p.body-text-1
+          Any locks not extended on or prior to expiration date will be subject to cancellation without advance notice, regardless of market conditions.  
+        %h6.heading
+          Delivery Requirements
+        %p.body-text-1
+          All loans (Conventional, FHA, VA, Jumbo, etc.) where advance locks have been placed are expected to meet 7 day file delivery to underwriting on 30 day locks and 15 day delivery requirement on 40+ day locks to provide ample time for underwriting and closing. File delivery time frames are mandatory. All processors and loan officers should take the necessary steps to ensure loans are delivered in time. Loans not delivered on time without arrangements made otherwise are subject to cancellation without notice. Avoid having to re-disclose and pass on costly extension fees to borrowers and deliver files on time. 
+        %h6.heading
+          Program Changes
+        %p.body-text-1
+          Pricing on locked loans that have undergone program changes will be handled on a case by case basis. Locks that are on loans which subsequently change programs from the initially locked program and / or investor, will be re-priced. Generally, this involves a worst case re-pricing, although these situations are diverse and will be handled based on the specifics of the program/investor/transaction/market.
+      %div.collapse__header
+        Borrower Paid Attestation
+        %span.arrow
+      %div.collapse__content 
+        %p.bold.paragraph
+          Print the borrower paid attestation from broker document
+          %a{:href=>"#"} here.
+      %div.collapse__header
+        Borrower Paid vs Lender Paid
+        %span.arrow
+      %div.collapse__content 
+        .matrices
+          %table
+            %tbody
+              %thead  
+                %tr
+                  %td
+                  %td{:colspan => "2"} Borrower-Paid Compensation
+                  %td{:colspan => "2"} Lender-Paid Compensation
+              %tr
+                %td
+                  Source of Compensation
+                %td{:colspan => "2"} All broker compensation is paid from the borrower's own funds.
+                %td{:colspan => "2"} All broker compensation is paid directly from CHMW.
+              %tr
+                %td
+                  Variation in Compensation
+                %td{:colspan => "2"} All compensation us negotiated between the broker and the borrower and is paid from borrower and is paid from borrower's own funds, therefore this can vary from one loan to the next.
+                %td{:colspan => "2"} All compensation is paid to the broker from the lender, at a predetermined margin and cannot vary from one loan to the next.
+              %tr
+                %td
+                  Premium Pricing
+                %td{:colspan => "2"} May be used to pay towards borrower's third-party charges, but cannot be credited towards any portion of the broker's compensation.
+                %td{:colspan => "2"} Any premium pricing must be credited toward the borrower's third-party charges or CHMW fees as Lender-Paid compensation can never increase or decrease. The credit cannot exceed the total of third party charges and CHMW fees.
+              %tr
+                %td Broker Credits
+                %td{:colspan => "2"} Broker may reduce their compensation and offer credits towards the borrower's third-party charges.
+                %td{:colspan => "2"} Broker cannot reduce their comensation. However when the YSP exceeds the predetermined LO Comp margin, the overage will be credited to borrower's third-party charges.
+              %tr
+                %td
+                  Processing Fees
+                %td{:colspan => "2"} Broker is allowed to charge processing fees to the borrower.
+                %td{:colspan => "2"} Broker is not allowed to charge processing fees to the borrower as they can only recieve compensation from one source. If using a contract processor with a NMLS # they are allowed to charge a processing fee that will be paid directly out of escrow. Must be a third-party independent of broker.
+              %tr
+                %td
+                  Seller Contribution
+                %td{:colspan => "2"} Seller contributions are considered borrower funds and therefore, can be credited towards broker compensation.
+                %td{:colspan => "2"} Seller contributions are considered borrower funds and therefore, cannot be credited toward broker compensation, as the broker cannot recieve comp from both the borrower and lender.
+    %h2.heading
+      %span.fancy_title.last-red CHMW
+      Loan Disclosures
+    %div.mb50{"ng-controller" => "ResourcesController"}
+      .form-group
+        %select{name: "loan_type", id: "loan-type", "ng-model" => "loanType", "ui-select2" => "defaultSelect2Options"}
+          %option{value: ""} Choose loan type
+          %option{value: "Jumbo"} Jumbo
+          %option{value: "Conventional"} Conventional
+          %option{value: "ARM"} ARM
+          %option{value: "HARP"} HARP
+          %option{value: "Government"} Government
+      .form-group
+        = select_tag "state", options_for_select([["Choose state", ""]]) + options_from_collection_for_select(State.selectable_states, :name, :name, nil), "ng-model" => "state", "ui-select2" => "defaultSelect2Options"
+      %input.bt-cta.bt-cta--bg-red{type: "submit", value: "Download package", "ng-click" => "downloadPackage()", "ng-disabled" => "!loanType || !state"}
+    %p.mb40
+      Not finding what you are looking for? Email us at
+      %a{:href=>"mailto:careers@commercemtgwholesale.com"}brokers@chmwholesale.com.
+= render "page_body"

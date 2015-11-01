@@ -1,0 +1,13 @@
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}
+    /[if IE]
+      %meta{"http-equiv" => 'X-UA-Compatible', content: 'IE=7'}
+    /[if lt IE 9]
+      = wicked_pdf_javascript_include_tag '//html5shim.googlecode.com/svn/trunk/html5.js'
+    
+    = wicked_pdf_stylesheet_link_tag :pdf
+
+  %body
+    .clearfix
+      = yield

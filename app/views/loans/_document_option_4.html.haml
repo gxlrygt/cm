@@ -1,0 +1,93 @@
+%article.type-system-rounded.wrapper
+  %p 
+    Hello #{@loan.broker_first_name},
+  %p
+    Thank you for choosing Commerce Home Mortgage Wholesale to submit your loan.
+  %p
+    Below are the necessary steps to complete your loan submission:
+  %ol.list.numerical.wrapper  
+    %li
+      %p
+        Print the attached documents and sign
+    %li
+      %p
+        Upload DU 3.2, Calyx Point, or Encompass file to TPO
+    %li
+      %p
+        Upload the ‘Loan Submission Cover Sheet’, ‘Compensation Attestation’, and all loan documentation to TPO
+    %li
+      %p
+        Click the ‘Submit’ button within TPO when available
+  %p.section-header
+    General Loan Documents Required:
+  %ol.list.two-column.wrapper 
+    %li
+      %p
+        %input{:type => "checkbox", name: "checkbox1"}
+        %span Broker Typed 1008/1003          
+    %li
+      %p
+        %input{:type => "checkbox", name: "checkbox2"}
+        %span Initial 1003 and LT 92900A (executed by all)
+    %li
+      %p
+        %input{:type => "checkbox", name: "checkbox3"}
+        %span Initial Good Faith Estimate, Fees, Worksheet & Settlement Provider List         
+    %li
+      %p
+        %input{:type => "checkbox", name: "checkbox4"}
+        %span Any updated GFEs issued since the initial GFE with completed Changed Circumstance
+    %li
+      %p
+        %input{:type => "checkbox", name: "checkbox5"}
+        %span Broker Typed 1008/1003          
+    %li
+      %p
+        %input{:type => "checkbox", name: "checkbox6"}
+        %span Anti Steering Disclosure
+    %li
+      %p
+        %input{:type => "checkbox", name: "checkbox7"}
+        %span Intent to Proceed         
+    %li
+      %p
+        %input{:type => "checkbox", name: "checkbox8"}
+        %span Credit Report (less than 45 days old)
+    %li
+      %p
+        %input{:type => "checkbox", name: "checkbox9"}
+        %span Borrower Authorization          
+    %li
+      %p
+        %input{:type => "checkbox", name: "checkbox10"}
+        %span IRS 4506-T (completed/signed)
+    %li
+      %p
+        %input{:type => "checkbox", name: "checkbox11"}
+        %span Local/State Specific disclosures        
+    %li
+      %p
+        %input{:type => "checkbox", name: "checkbox12"}
+        %span Purchase: Purchase Agreement/Contract
+    %li
+      %p
+        %input{:type => "checkbox", name: "checkbox13"}
+        %span Income/Asset Documentation              
+    %li
+      %p
+        %input{:type => "checkbox", name: "checkbox14"}
+        %span Refinance: Payoff Statement
+    %li
+      %p
+        %input{:type => "checkbox", name: "checkbox15"}
+        %span AUS Findings (Optional)       
+  %p
+    %strong Questions? 
+    We are happy to help! Call Client Services at 949.423.3026 or email us at: 
+    %u
+      %a{:href=>"mailto:nathaniel@commercemtgwholesale.com"}
+        nathaniel@commercemtgwholesale.com
+
+  %p
+    Sincerely,
+  = render "shared/emails/logo"

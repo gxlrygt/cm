@@ -1,0 +1,62 @@
+.modal{
+  &__overlay{
+    display: none;
+    background-color: rgba(0,0,0,.4);
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+  &__body{
+    @include span-columns(7);
+    max-width: 750px;
+    float: none;
+    position: relative;
+    background-color: white;
+    padding: 35px;
+    border: red 5px solid;
+    margin: 160px auto 0 auto!important;
+    .title{
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 18px;
+    }
+    .desc{
+      font-weight: 300;
+      margin-bottom: 30px;
+      font-size: 18px;
+
+    }
+  }
+  &__close {
+    background: $wh-red;
+    color: #ffffff;
+    font-size: 15px;
+    width: 32px;
+    background: #e2231a;
+    display: block;
+    padding: 5px;
+    text-align: center;
+    position: absolute;
+    right: 10px;
+    font-weight: 700;
+    top: 10px;
+    &:hover{
+      background: $wh-highlight-gray;
+    }
+  }
+}
+#become-a-partner-modal{
+  .modal__body{
+    max-width: 760px;
+    width: 90%
+  }
+}
+#signup-modal{
+  .modal__body{
+    max-width: 550px;
+    width: 90%
+  }
+}

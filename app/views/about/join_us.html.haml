@@ -1,0 +1,85 @@
+- content_for :about_body do
+  %article.sub-page-content
+    %h2.sub-title
+      Join Us
+    %p.slogan
+      Join the Team at Commerce Home Mortgage Wholesale
+    %h3
+      We’re changing the mortgage lending industry, one loan at a time.
+    %p
+      We treat every transaction personally, and every employee like family. We offer the opportunity to work with great people, using the latest technology in a fast-paced industry.
+    %p
+      We’re looking for account executives who can deliver concierge level service and operations staff who are accessible and accountable. Together we can build a company that brokers can’t stop raving about. 
+      %span At the end of the day, that’s a great feeling.
+
+= render "page_body"
+%section
+  %article.hero-content.hero-content--about
+    .about-bottom
+      %h3.about-bottom__title boast worthy office perks
+      %ul.about-bottom__boxes
+        %li
+          %p
+            Taco Tuesdays on Mondays
+        %li
+          %p
+            Thursdays stretch and share ideas
+        %li
+          %p
+            End of the month Parties
+        %li
+          %p
+            Complimentary Gym Membership
+        %li
+          %p
+            Company Picnics
+        %li
+          %p All of the expected benefits (Medical & Dental Insurance, 401k, Accidental insurance).
+    = image_tag("img-join-us-middle.jpg")
+    .overlay.overlay__blue
+%section.content-wrap
+  %div.nearby
+    %h1.nearby__heading SEE WHAT'S NEARBY
+    %ul.nearby__list
+      %li
+        = image_tag("icon-anywhere.png")
+        %h3.head Anywhere
+        %b 3 min
+      %li
+        = image_tag("icon-beach.png")
+        %h3.head The Beach
+        %b 8 min
+      %li
+        = image_tag("icon-disneyland.png")
+        %h3.head Disneyland
+        %b 15 min
+      %li
+        = image_tag("icon-hollywood.png")
+        %h3.head Hollywood
+        %b 40 miles
+    %h1.nearby__heading ready to join our team?
+    %p
+      Send us your resume and top 3 skills to
+      %a{:href=>"mailto:careers@commercemtgwholesale.com"}careers@chmwholesale.com.
+%section.flexslider
+  %ul.slides
+    %li
+      %div.flexslider__text
+        “I came here looking for a job, but found a family. I love coming to work because of the people.”
+        %small — Janina Kosloski, Account Manager
+      = image_tag("slide-1.jpg")
+    %li
+      %div.flexslider__text
+        “I love the Open Door Policy and being able to work with people I trust who have my back.”
+        %small — Chi Do, Regional Sales Manager
+      = image_tag("slide-2.jpg")
+    %li
+      %div.flexslider__text
+        “The work is the same anywhere you go but it’s the people and the genuine friendships we have created that make the difference.”
+        %small —Venus Blair, Underwriter
+      = image_tag("slide-3.jpg")
+    %li
+      %div.flexslider__text
+        “My 8-year old is a human lie detector and knows when a person is being sincere or not. She genuinely likes everyone that I work with and loves to visit mommy’s work.”
+        %small — Santee Knight, Captain of the Welcome Wagon
+      = image_tag("slide-4.jpg")

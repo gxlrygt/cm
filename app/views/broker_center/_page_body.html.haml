@@ -1,0 +1,25 @@
+%section.hero-content.hero-broker
+  .js-parallax-window.parallax-window
+    .parallax-static-content
+      %section.content-wrap
+        %h1.title
+          Broker Center
+    .js-parallax-background.parallax-background
+%section.content-wrap
+  %nav.sub-page-sidebar
+    %ul
+      %li
+        = link_to "Rates", broker_center_path, class: "#{action_name == 'index' ? 'active' : ''}"
+      %li
+        = link_to "Quick Pricer", broker_center_quick_pricer_path, class: "#{action_name == 'quick_pricer' ? 'active' : ''}"
+      %li
+        = link_to "Resources", broker_center_resources_path, class: "#{action_name == 'resources' ? 'active' : ''}"
+      %li
+        = link_to "Appraisals", broker_center_appraisals_path, class: "#{action_name == 'appraisals' ? 'active' : ''}"
+      %li
+        = link_to "Get Approved", new_broker_approval_form_path, class: "#{action_name == 'new' && controller_name == 'broker_approval_forms' ? 'active' : ''}"
+      %li
+        = link_to "Submit a Loan", new_loan_path, class: "#{action_name == 'new' && controller_name == 'loans' ? 'active' : ''}"
+
+  - if content_for? :broker_center_body
+    = yield :broker_center_body

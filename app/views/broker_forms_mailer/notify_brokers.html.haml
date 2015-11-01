@@ -1,0 +1,78 @@
+%p #{@broker_approval_form.company} has submitted a broker approval form on Commerce Wholesale. The details are:
+%ul
+  %li
+    %strong Company
+    = @broker_approval_form.company
+  %li
+    %strong Company Type
+    = @broker_approval_form.company_type
+  %li
+    %strong DBA
+    = @broker_approval_form.dba
+  %li
+    %strong Company President
+    = @broker_approval_form.company_president
+  %li
+    %strong Broker of Record
+    = @broker_approval_form.broker_of_record
+  %li
+    %strong NMLS
+    = @broker_approval_form.nmls
+  %li
+    %strong Address
+    = @broker_approval_form.address
+  %li
+    %strong City
+    = @broker_approval_form.city
+  %li
+    %strong State
+    = @broker_approval_form.state.name
+  %li
+    %strong Zip
+    = @broker_approval_form.zip
+  %li
+    %strong Primary Contact
+    = @broker_approval_form.primary_contact
+  %li
+    %strong Title
+    = @broker_approval_form.title
+  %li
+    %strong Phone
+    = @broker_approval_form.phone
+  %li
+    %strong I want to be approved for:
+    = @broker_approval_form.loan_types.map(&:name).join(", ")
+  %li
+    %strong How Did You Find Us?
+    = @broker_approval_form.how_did_you_find_us
+  %li
+    %strong How Did You Find Us (Account Executive Name)
+    = @broker_approval_form.how_did_you_find_us_account_executive_name
+  %li
+    %strong How Did You Find Us (Other)
+    = @broker_approval_form.how_did_you_find_us_other
+  %li
+    %strong Lender Paid Compensation Percentage
+    = @broker_approval_form.lender_paid_compensation_percentage
+  %li
+    %strong Maximum Compensation
+    = @broker_approval_form.maximum_compensation
+  - if @broker_approval_form.tpo_user_access_requests.any?
+    %li
+      %strong TPO User Access Requests
+      %ul
+        - @broker_approval_form.tpo_user_access_requests.each do |request|
+          %li
+            %p
+              Name: #{request.first_name} #{request.last_name}
+              %br
+              Role: #{request.role}
+              %br
+              Email: #{request.email}
+              %br
+              NMLS Number: #{request.nmls_number}
+              %br
+              Date NMLS Issued: #{request.nmls_issued}
+              %br
+              Date NMLS Expires: #{request.nmls_expiration}
+              %br

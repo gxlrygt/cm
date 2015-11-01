@@ -1,0 +1,16 @@
+- content_for :broker_center_body do
+  %article.sub-page-content
+    %h2.sub-title Submit a Loan
+    %p.slogan 
+      Thank You! We have received your new loan information.
+    = link_to "Download Completed Submission Cover Page", cover_page_loan_path(@loan, format: "pdf"), class: "mb25 db"
+    %h2.heading.mb15
+      Please complete the following additional steps:
+    %ul.order--number.mb40--force
+      %li Print and sign the completed submission cover page above.
+      %li Upload submission cover page, DU 3.2, Calyx Point or Encompass file to TPO WebCenter.
+      %li Issue/re-issue credit.
+      %li Upload intitial loan documentation to TPO WebCenter.
+      %li Once button is available, click to ‘Submit’ within TPO WebCenter.
+
+= render "broker_center/page_body"

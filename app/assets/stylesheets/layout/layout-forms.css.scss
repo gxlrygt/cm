@@ -1,0 +1,110 @@
+.forms {
+  @include reset-display;
+  @include clearfix;
+  @include pad(10px);
+
+  margin-bottom: 50px;
+  
+  label:not(.file) {
+    display: none;
+  }
+  
+  .attachment_preview,
+  .file,
+  .checkbox { 
+    label {
+      display: inline-block;
+      margin-right: 20px;
+      padding: 15px 0px;
+      text-transform: uppercase;
+      font-weight: 400;
+    }
+  }
+  .checkbox input {
+    width: 20px;
+    background-color: $wh-red;
+  }
+  .file input{
+    border: 0;
+    line-height: 1;
+  }
+  legend{
+    width: 100%;
+    float: left;
+    font-size: 0.8em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #676767;
+    margin-bottom: 5px;
+  }
+  .simple_form{
+    width: 100%;
+    display: block;
+    text-transform: capitalize;
+  }
+  .inner-form {
+    @include span-columns(9 of 9);
+  }
+  .info-two-column,
+  .info-three-column,
+  .info-four-column {
+    @include clearfix;
+  }
+
+  .info-two-column .form-group {
+      @include span-columns(4.5 of 9);
+      @include omega(2n);
+  }
+  .info-three-column .form-group{
+    @include span-columns(3 of 9);
+    @include omega(3n);
+  }
+  .info-four-column .form-group{
+    @include span-columns(2.25 of 9);
+    @include omega(4n);
+  }
+  .btn-default{
+    float: right;
+  }
+}
+.form-footer{
+  border-top: 1px solid $wh-light-gray;
+  padding: 30px 0;
+  text-align: right;
+  margin-top: 20px;
+}
+// broker approval
+.form-group.broker_approval_form_company_type {
+  @include span-columns(4.5 of 9);
+  @include omega(2n);
+}
+.form-group.broker_approval_form_dba {
+  @include span-columns(4.5 of 9);
+  @include omega(2n);
+}
+
+.form-group.broker_approval_form_loan_types {
+  width: 100% !important;
+}
+
+
+.has-error{
+  input,
+  textarea,
+  .select2-container .select2-choice,
+  .select2-container .select2-choice .select2-arrow {
+    border-color: $wh-red;
+    background-color: tint($wh-red, 80);
+  }
+  .help-block{
+    display: none;
+  }
+}
+
+
+// add margin to quick pricer inputs.
+.quick-pricer .form-group > li {
+  margin-bottom: 15px;
+}
+
+

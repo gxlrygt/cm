@@ -1,0 +1,106 @@
+- content_for :broker_center_body do
+  %article.sub-page-content
+    %h2.sub-title Submit a Loan
+    %p.slogan 
+      With
+      %span.fancy_title.last-red CHMW 
+      , getting your file to the underwriter is fast and simple. 
+    %p.light
+      Complete the form below to generate the appropriate coversheet(s) for submittal to the TPO WebCenter. 
+      %br 
+        Thank you for your business..
+    %p.bold.mb50--force
+      Need Help? Contact us at
+      %span (949)423-3026.
+    %div.well.well--progress
+      %div.state{"ng-class" => "{active: currentStep == 'step1'}"}
+        %span Apply : Step 1
+      %div.state{"ng-class" => "{active: currentStep == 'step2'}"}
+        %span Apply : Step 2
+      %div.state
+        %span Summary
+    %section.form.inner-wrap.forms{"ng-init" => "currentStep = 'step1'"}
+      = simple_form_for(@loan, html: { class: 'form-horizontal' }, :defaults => { :input_html => { :class => "" } }, wrapper: :horizontal_form, wrapper_mappings: { string: :horizontal_form }) do |f|
+        = render 'shared/error_messages', object: f.object 
+        -#step1
+        %div.step1{"ng-show" => "currentStep == 'step1'"}
+          %fieldset.inner-form.info-two-column
+            = f.input :account_executive, collection: Loan::ACCOUNT_EXECUTIVES, prompt: :translate, input_html: { class: "select2" }
+          %fieldset.inner-form
+            %legend
+              Broker Information
+            .info-two-column
+              = f.input :broker_first_name
+              = f.input :broker_last_name
+              = f.input :broker_phone
+              = f.input :broker_email, as: :string
+          %fieldset.inner-form
+            %legend
+              Processor Information
+            .info-two-column
+              = f.input :processor_first_name
+              = f.input :processor_last_name
+              = f.input :processor_phone
+              = f.input :processor_email, as: :string
+          %fieldset.inner-form
+            %legend
+              Property and loan information
+            = f.input :address, as: :string
+            .info-two-column
+              = f.input :city
+              .info-two-column.form-group
+                = f.association :state, label_method: :name, include_blank: false, input_html: { class: "select2" }
+                = f.input :zip
+            .info-two-column
+              = f.input :property_value
+              = f.input :loan_amount
+            .info-three-column
+              = f.input :disclosed_rate_pct
+              = f.input :ltv
+              = f.input :cltv
+            .info-four-column
+              = f.input :impounds_or_escrows, as: :select, prompt: :translate, input_html: { class: "select2 " }
+              = f.input :loan_type, collection: Loan::LOAN_TYPES, prompt: :translate, input_html: { class: "select2" }
+              = f.input :transaction_type, collection: Loan::TRANSACTION_TYPES, prompt: :translate, input_html: { class: "select2" }
+              = f.input :fha_underwriting_type, collection: Loan::FHA_UNDERWRITING_TYPES, prompt: :translate, input_html: { class: "select2" }
+              = f.input :term, collection: Loan::TERMS, prompt: :translate, input_html: { class: "select2" }
+              = f.input :property_type, collection: Loan::PROPERTY_TYPES, prompt: :translate, input_html: { class: "select2" }
+              = f.input :appraisal_needed, as: :select, prompt: :translate, input_html: { class: "select2" }
+              = f.input :occupancy, collection: Loan::OCCUPANCIES, prompt: :translate, input_html: { class: "select2" }
+          %fieldset.form-footer
+            %a{href: "javascript:void(0)", "ng-click" => "currentStep = 'step2'", :class => "bt-cta bt-cta--red bt-cta--secondary"} Next
+        %div.step2{"ng-show" => "currentStep == 'step2'"}
+          %fieldset.inner-form
+            %legend
+              Borrower Information
+            .info-two-column
+              = f.input :borrower_first_name
+              = f.input :borrower_last_name
+              = f.input :borrower_email, as: :string
+              = f.input :borrower_mid_fico_score
+              = f.input :borrower_phone
+          %fieldset.inner-form
+            %legend
+              Co-Borrower Information
+            .info-two-column
+              = f.input :coborrower_first_name
+              = f.input :coborrower_last_name
+              = f.input :coborrower_email, as: :string
+              = f.input :coborrower_mid_fico_score
+              = f.input :coborrower_phone
+          %fieldset.inner-form
+            %legend
+              Pay & Compensation
+            .info-three-column
+              = f.input :lender_or_borrower_paid, collection: Loan::LENDER_OR_BORROWER_PAID_OPTIONS, prompt: :translate, input_html: { class: "select2" }
+              = f.input :underwriting_fee_buyout, as: :select, prompt: :translate, input_html: { class: "select2" }
+              = f.input :lender_compensation
+          %fieldset.inner-form
+            %legend
+              Additional Information
+            = f.input :additional_details
+          %fieldset.form-footer
+            %a{href: "javascript:void(0)", :class => "mr10 bt-cta bt-cta--secondary bt-cta--light-gray", "ng-click" => "currentStep = 'step1'"} Previous
+            = f.button :submit, value: "Submit", :class => "bt-cta bt-cta--solid-red bt-cta--secondary mb0"
+
+= render "broker_center/page_body"

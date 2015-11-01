@@ -1,0 +1,53 @@
+////////////// THIS PAGE IS DEPRECATED - THE REAL PAGE IS IN app/views/broker_approval_forms/new
+////////////// DO NOT MAKE CHANGES TO THIS PAGE ANYMORE
+- content_for :broker_center_body do
+  %article.sub-page-content
+    %h2.sub-title
+      Get Approved
+    %p.slogan
+      At
+      %span.fancy_title.last-red CHMW
+      , Our goal is to be your lender of choice by providing an exceptional lending experience.
+    %p.mb20 GET STARTED:
+    %ul.order--number.mb25.ul-indent
+      %li Submit your company info and submission preferences
+      %li Immediately receive a completed contract package
+      %li Sign and return contract package accompanied by financials
+      %li Receive approval and submit your loan
+    %div.well
+      Apply Now
+    %p.body-text-1
+      Please complete the form below and we will email you the appropriate documentation immediately upon submittal. You can also reach us directly at
+      %b (949)423-3026.
+    %div.form.form--apply-now.mt25
+      %ul
+        %li
+          %input{:type=>"text", :placeholder=>"*Company"}
+        %li
+          %select.wholesale-dd
+            %option{:value => "1"} *Other
+            %option{:value => "2"} Property State2
+        %li
+          %input{:type=>"text", :placeholder=>"*DBA"}
+        %li
+          %input{:type=>"text", :placeholder=>"*Company NMLS"}
+        %li
+          %input{:type=>"text", :placeholder=>"*Company President"}
+        %li
+          %input{:type=>"text", :placeholder=>"*Broker of Record"}
+        %li.col-one
+          %input{:type=>"text", :placeholder=>"*Address"}
+        %li.col-three
+          %input{:type=>"text", :placeholder=>"*City"}
+        %li.col-three
+          %select.wholesale-dd
+            %option{:value => "1"} *State
+            %option{:value => "2"} Property State2
+        %li.col-three
+          %input{:type=>"text", :placeholder=>"*Zipcode"}
+      %div.tar.mt25
+        %a.bt-cta.bt-cta--light-gray{:href => "#"}
+          Cancel
+        %a.bt-cta.bt-cta--red{:href => "#"}
+          Next
+= render "page_body"

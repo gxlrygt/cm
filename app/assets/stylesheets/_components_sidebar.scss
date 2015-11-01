@@ -1,0 +1,97 @@
+$sidebar-width: 350px;
+
+.sidebar {
+  position: fixed;
+  right: 0;
+  top: 0;
+  @include transform(translateX(100%));
+  @include transition(.3s ease-in-out);
+  background: darken($wh-medium-gray, 20);
+  border-left: 2px solid $wh-light-gray;
+  z-index: 6;
+  height: 100%;
+  width: $sidebar-width;
+  @include transform(translateX($sidebar-width));
+  overflow-y:auto;
+  &__close{
+    //color: $wh-red;
+    position: absolute;
+    top:35px;
+    right:25px;
+    width: 25px;
+    height: 25px;
+    display: block;
+    z-index: 5;
+    @include hide-text;
+    background: image-url('menu-close-red.svg');
+  }
+  // &__main {
+  //   padding-top: 35px;
+
+  // }
+}
+#main-content,
+.hello-bar,
+.main-header,
+footer{
+  @include transition(.3s ease-in-out);
+  @include transform(translateX(0));
+}
+
+.side-nav {
+  padding: 30px;
+  position: relative;
+  li {
+    display: block;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 2;
+    //margin-bottom: 5px;
+    a {
+      padding: 5px 15px;
+      font-size: 18px;
+      color: #fff;
+      display: block;
+      &:hover,
+      &.active {
+        color: $wh-red;
+      }
+    }
+    &.main{
+      @extend .light;
+      margin-top: 30px;
+      &:first-child{
+        margin-top: 0;
+      }
+      padding: 5px 15px;
+      font-size: 14px;
+      color: tint($wh-light-gray, 50%);
+    }
+  }
+  &:after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: image-url('diamond-pattern.png');
+    background-size: cover;
+    z-index: 1;
+    display: block;
+    top: 0;
+    left: 0;
+    opacity: 0.3;
+    position: absolute;
+  }
+}
+
+body.open {
+  .sidebar{
+    @include transform(translateX(0));
+  }
+  footer,
+  .hello-bar,
+  .main-header,
+  #main-content {
+    @include transform(translateX(-$sidebar-width));
+  }
+
+}

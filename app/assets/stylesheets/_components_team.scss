@@ -1,0 +1,101 @@
+// About Section
+
+#team-items {
+  position: relative;
+  @include fill-parent;
+  @include clearfix;
+  @include row(table);
+
+  li {
+    position: relative;
+    float: left;
+    &.active{
+      a{
+        img{
+          &.red{
+            opacity: 0;
+          }
+        }
+      }
+    }
+    a {
+      position: relative;
+      padding: 10px;
+      display: block;
+      @include fill-parent;
+      img {
+        width: 100%;
+        z-index: 1;
+        display: block;
+        &.red{
+          @include transition(all linear .3s);
+          left: 0;
+          top:0;
+          padding: 10px;
+          position: absolute;
+          z-index: 2;
+        }
+      }
+      &:hover{
+        img{
+          &.red{
+            opacity: 0;
+          }
+        }
+      }
+    }
+  }
+
+  .grid-item {
+    @include span-columns(2.25 of 9);
+    a {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  .grid-item:nth-child(-n + 2) {
+    height: auto;
+    width: 50%;
+    a {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  .flag {
+    content: '';
+    opacity: 0;
+    display: none;
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 15px solid $wh-red;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    margin-left: -7px;
+  }
+
+  .team-item--bio {
+    position: relative;
+    top:4px;
+    overflow: hidden;
+    background: $wh-red;
+    color: white;
+    @include transition(all linear 1s);
+    @include pad(25px);
+    margin: 10px;
+    display: block;
+    float: none;
+    &.none{
+      display: none;
+    }
+    h3 {
+      font-weight: 400;
+    } span {
+        font-weight: 200;
+      }
+  }
+}

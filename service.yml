@@ -1,0 +1,25 @@
+web:
+  image: devops.bwcmtg.com:5000/chm-wholesale-website:latest
+  name: wholesale-website-appsrv
+  environment:
+    - OB_USERNAME=BWC_sa
+    - OB_PASSWORD=Optimal
+  links:
+    - db
+  ports:
+    - "8000:80"
+    - "5000:5000"
+    - "2222:22"
+  restart: always
+db:
+  image: postgres:latest
+  name: wholesale-website-db
+  ports:
+    - "5432:5432"
+    - "3222:22"
+  environment:
+    - POSTGRES_DATABASE=commerce_wholesale
+    - POSTGRES_USER=postgres
+    - POSTGRES_PASSWORD=
+  volumes:
+    - /srv/db/pgsql/chm-wholesale-website:/var/lib/postgresql/data

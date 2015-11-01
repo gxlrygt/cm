@@ -1,0 +1,19 @@
+- unless flash.empty?
+  - if flash[:error].present?
+    .flash-error
+      %span= sanitize(flash[:error])
+  - if flash[:alert].present?
+    .flash-alert
+      %span= sanitize(flash[:alert])
+  - if flash[:success].present?
+    .flash-success
+      %span= sanitize(flash[:success])
+  - if flash[:notice].present?
+    .flash-notice
+      %span= sanitize(flash[:notice])
+  - if flash[:info].present?
+    .flash-info
+      %span= sanitize(flash[:info])
+  - if flash[:warning].present?
+    .flash-warning
+      %span= sanitize(flash[:warning])

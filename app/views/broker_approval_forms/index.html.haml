@@ -1,0 +1,20 @@
+- content_for :broker_center_body do
+  %article.sub-page-content
+    %h2.sub-title
+      Broker Approval Forms
+    %section
+      %table.table.table-hover.tables
+        %thead
+          %tr
+            %th ID
+            %th Company
+            %th Email
+        %tbody
+          - @broker_approval_forms.each do |baf|
+            %tr
+              %td= link_to(baf.id, baf)
+              %td= baf.company
+              %td= baf.email
+      = link_to "Submit new form", new_broker_approval_form_path, class: "submit-form-btn"
+
+= render "broker_center/page_body"

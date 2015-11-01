@@ -1,0 +1,236 @@
+#logo {
+  a{
+    background: image-url("logo-white.svg") no-repeat left -4px;
+    background-size: contain;
+    height: 60px;
+    padding: 0;
+    @include hide-text;
+    width: 268px;
+    margin-bottom: 0;
+    position: relative;
+    display: block;
+    @include transition(none);
+    h1{
+      display: block;
+      margin-bottom:0;
+      height: 55px;
+    }
+  }
+}
+
+.utility {
+  display: block;
+  width: 100%;
+  > ul {
+    > li {
+      white-space: nowrap;
+      color: #d9d9d9;
+      text-align: center;
+      position: relative;
+      > a {
+        display: block;
+        padding:8px 20px;
+        width: 100%;
+        color: #fff;
+        height: 100%;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 18px;
+        @include transition(all .3s ease-in-out);
+        &:hover {
+          color: $wh-red;
+        }
+      }
+      &.loan-bt {
+        @include transition(all .3s ease-in-out);
+        border:3px solid #fff;
+        white-space: nowrap;
+        &:hover {
+          border-color: $wh-red;
+          background: $wh-red;
+          a{
+            color: white;
+          }
+        }
+      }
+      &.hamburger-bt {
+        width: 51px;
+        @include hide-text;
+        padding: 0;
+        &:after {
+          content: "";
+          display: block;
+          position: absolute;
+          pointer-events: none;
+          right: 5px;
+          top: 1px;
+          width: 42px;
+          height: 42px;
+          @include transition(all .3s ease-in-out);
+          background-image: image-url('menu-icon.svg');
+          background-position: center;
+          background-size: 60%;
+          background-repeat: no-repeat;
+          border: 2px solid white;
+          border-radius: 50%;
+        }
+        &:hover {
+          &:after {
+            border: 2px solid $wh-red;
+          }
+        }
+      }
+    }
+  }
+}
+
+.main-header {
+  position: absolute;
+  width: 100%;
+  z-index: 5;
+  background-color: rgba(255, 255, 255, 0);
+  @include transition(all .3s ease-in-out);
+  padding: 10px 0;
+  .content-wrap {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  &.is_stuck{
+    color: $wh-dark-gray;
+    background-color: rgba(255,255,255,1);
+    border-bottom: $wh-light-gray 1px solid;
+
+    #logo a {
+      background: image-url("logo-black.svg") no-repeat left -1px;
+    }
+    .utility ul li {
+      a {
+        color: $wh-dark-gray;
+      }
+      &.hamburger-bt {
+        &:after{
+          background-image: image-url('menu-icon.svg');
+          background-color: $wh-red;
+          border-color: $wh-red;
+        }
+      }
+      a:hover{
+        color: $wh-red;
+      }
+      &.loan-bt{
+        border-color: $wh-red;
+        a {
+          color: $wh-red;
+        }
+        &:hover {
+          a{
+            color:#ffffff;
+          }
+        }
+      }
+    }
+  }
+}
+#overlay-nav{
+  display: none;
+
+}
+body.open{
+  overflow:hidden;
+  #overlay-nav{
+    content:"";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background: rgba(255,255,255,.4);
+    z-index: 6;
+    visibility: visible;
+    left: 0;
+    top: 0;
+    cursor: pointer;
+  }
+  .utility{
+    ul {
+      li {
+        &.hamburger-bt{
+          &:after {
+            @include transform(rotate(90deg));
+          }
+        }
+      }
+    }
+  }
+}
+
+#sign-in { 
+  form {
+    position: relative;
+    @include clearfix;
+  }
+  ul {
+    text-align: left;
+    display: none;
+    position: absolute;
+    top: 20px;
+    width: 370px;
+    right: 0;
+    padding: 20px 30px;
+    background-color: #fff;
+    border: 3px solid $wh-red;
+    opacity: 0;
+    @include transition(all .3s ease-in-out);
+    @include clearfix;
+    li {
+      width: 100%;
+      text-align: left;
+      float: left;
+      @include clearfix;
+    }
+    .link--red{
+      color:$wh-red;
+    }
+    &:before{
+      content: "";
+      display: block;
+      height: 20px;
+      position: relative;
+      width: 300px;
+      top: -43px;
+      right: -32px;
+    }
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 15px solid $wh-red;
+    left: 50%;
+    @include transform(translateX(-50%));
+
+    @include transition(all .3s ease-in-out);
+  }
+  > a {
+    border:3px solid transparent;
+    @include transition(all .3s ease-in-out);
+  }
+}
+  #sign-in:hover {
+    > a {
+      background-color: $wh-red;
+      color: white;
+      border-color:$wh-red;
+    }
+    ul {
+      display: block;
+      opacity: 1;
+    }
+    &:after {
+      opacity: 1;
+    }
+  }

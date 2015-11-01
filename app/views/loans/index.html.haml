@@ -1,0 +1,22 @@
+- content_for :broker_center_body do
+  %article.sub-page-content
+    %h2.sub-title
+      Loans in the system
+    %section
+      %table.table.table-hover.tables
+        %thead
+          %tr
+            %th ID
+            %th Broker
+            %th Processor
+            %th Borrower
+        %tbody
+          - @loans.each do |loan|
+            %tr
+              %td= link_to(loan.id, loan)
+              %td #{loan.broker_first_name} #{loan.broker_last_name}
+              %td #{loan.processor_first_name} #{loan.processor_last_name}
+              %td #{loan.borrower_first_name} #{loan.borrower_last_name}
+      = link_to "Submit a loan", new_loan_path, class: "submit-form-btn"
+
+= render "broker_center/page_body"     

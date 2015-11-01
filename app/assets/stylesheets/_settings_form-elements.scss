@@ -1,0 +1,84 @@
+input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"], input:not([type]), textarea, select[multiple=multiple], textarea{
+  border-color: #e5e5e5;
+  border-radius: 3px;
+  margin-bottom: 1.2em;
+  color:$wh-dark-gray;
+  font-size: 15px;
+  @extend .font-roboto;
+  box-shadow: none;
+  min-height: 40px;
+  @include transition(all 0.3s ease-in-out);
+  &:focus{
+    outline: 1px solid $wh-red;
+    box-shadow: none;
+    border-color:$wh-red;
+  }
+}
+body .select2-container .select2-choice .select2-arrow b{
+  background-position: 0 6px;
+}
+.file-input{
+  ::-webkit-file-upload-button{
+    visibility: hidden;
+  }
+
+    display: -webkit-box !important;
+    display: -moz-box !important;
+    display: -ms-flexbox !important;
+    display: -webkit-flex !important;
+    display: flex !important;
+    -webkit-align-items: center !important;
+    align-items: center  !important;
+    -ms-flex-align: center !important;
+    border: 2px solid #e5e5e5;
+    margin-bottom: 0.75em;
+      &:hover,
+      &:focus{
+        outline: none;
+        border-color:$wh-red;
+      }
+      label{
+        padding: 0 !important;
+        @extend .fx;
+        color: #aaa;
+        margin: 0 0 0 4px;
+        font-size: 15px;
+        abbr[title]{
+          border-bottom: none;
+        }
+      }
+
+  input[type="file"]{
+    color:transparent;
+    width: 110px;
+    padding: 6px;
+    margin: 2px;
+    position: relative;
+    &:before{
+      content: "Choose File";
+      display: block;
+      color:$wh-medium-gray;
+      background-color: #e5e5e5;
+      opacity: 1;
+      padding: 8px;
+      margin: 0;
+      text-align: center;
+      z-index: 99;
+      width: 110px;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    &:hover{
+      outline: none;
+      cursor: pointer;
+      &:before{
+       color:#fff;
+        background-color:$wh-red;
+      }
+    }
+    &:focus{
+      outline: none;
+    }
+  }
+}

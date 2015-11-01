@@ -1,0 +1,319 @@
+@import "bourbon";
+@import "reset.css";
+@import "bitters/base/base";
+@import "neat";
+@import "pdf_coverletter";
+
+.page-break { 
+  display:block; 
+  clear:both; 
+  page-break-after:always; 
+}
+.align-center {
+	text-align: center;
+}
+ol.numbered-right-parenthesis {
+  counter-reset: list;
+}
+ol.numbered-right-parenthesis > li {
+  list-style: none;
+  position: relative;
+}
+
+//logo
+.logo{
+  width: 200px;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.up-alpha {
+  list-style-type: upper-alpha;
+}
+.up-roman {
+  list-style-type: upper-roman;
+}
+.low-alpha {
+  list-style-type: lower-alpha;
+}
+.low-roman {
+  list-style-type: lower-roman;
+}
+.numerical {
+  list-style-type: decimal;
+}
+.circle-bullet {
+  list-style-type: circle;
+  li {
+    list-style-type: inherit;
+  }
+}
+.horizontal-list {
+  padding: 15px;
+  text-align: left;
+  @include clearfix;
+
+  li {
+    width: 33%;
+    float: left;
+    padding: 0px;
+    padding-left: 10px;
+    line-height: 25px;
+  }
+}
+// ol.numbered-right-parenthesis > li:before {
+//     counter-increment: list;
+//     content: counter(list, decimal) ") ";
+//     position: absolute;
+//     left: -1.4em;
+// }
+// // HTML5BOILERPLATE PRINT STYLES (http://demo.html5boilerplate.com/css/style.css)
+* { 
+  color: #363636 !important; 
+  box-shadow:none !important; 
+  text-shadow: none !important; 
+  filter:none !important; -ms-filter: none !important; 
+  font-size: 12px;
+} /* Black prints faster: h5bp.com/s */
+
+// Layout
+
+.wrapper {
+  @include outer-container();
+  @include pad();
+}
+.boxes {
+  @include outer-container;
+  @include pad();
+}
+.boxes-box{
+  @include span-columns(6 of 12);
+  @include pad();
+}
+
+// Type Hierarchy
+
+$base-border-radius: 3px !default;
+$base-line-height: 1.5em !default;
+$base-spacing: 1.5em !default;
+$action-color: #477DCA !default;
+$dark-gray: #333 !default;
+$light-gray: #DDD !default;
+$medium-screen: em(640) !default;
+$base-font-color: $dark-gray !default;
+$sans-serif: 'Nunito', sans-serif;
+$sans-serif-2: 'Varela Round', sans-serif;
+
+.type-system-rounded {
+
+  @include clearfix;
+  font-family: $sans-serif;
+  padding-top: 80px;
+
+  h1 {
+    width: 200px;
+    height: 50px;
+    border: 2px solid red;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    @include hide-text;
+    background-position: left center;
+    background-size: cover;
+    background: image-url("hero-about.jpg");
+  }
+  h2 {
+    font-family: $sans-serif-2;
+    font-size: 1.2em;
+    font-weight: 600;
+    line-height: 1.4em;
+    margin-bottom: 0.9em;
+  }
+  h3 {
+    font-family: $sans-serif-2;
+    font-size: 1.2em;
+    font-weight: 400;
+    line-height: 1.3em;
+    margin-bottom: 0.4em;
+  }
+  p {
+    text-align: left;
+    font-family: $sans-serif;
+    font-size: 1.05em;
+    font-weight: 300;
+    line-height: 1.4em;
+    //margin-bottom: 1.5em;
+  }
+  //Lists Styling
+
+  .list {
+    list-style-position: outside;
+    line-height: 15px;
+    padding: 15px;
+  }
+
+  .list li {
+    padding: 3px;
+    // li {
+    //   padding: 0px 10px 0px 0px;
+    // }
+  }
+  .two-column li {
+    position: relative;
+    @include span-columns(6 of 12);
+    @include omega(2n);
+
+    input[type=checkbox] {
+      float: left;
+      width: 10px;
+      height: 10px;
+      box-shadow: -8px 10px 0px -7px #ebebeb, 8px 10px 0px -7px #ebebeb;
+    }    
+    span {
+      text-align: left;
+      float: left;
+      font-size: 10px;
+      padding-left: 10px;
+      @include span-columns(5 of 6);
+    }
+  }
+  .block {
+    @include span-columns(3);
+    @include omega(4n);
+  }
+}
+
+.company_resolution {
+  @include clearfix;
+  font-family: $sans-serif;
+  padding-top: 80px;
+
+  h1 {
+    width: 200px;
+    height: 50px;
+    border: 2px solid red;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    @include hide-text;
+    background-position: left center;
+    background-size: cover;
+    background: image-url("hero-about.jpg");
+  }
+
+  p {
+    font-size: 11.5px;
+    width: 95%;
+    margin-bottom: 25px;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    -webkit-hyphens: none;
+    hyphens: none;
+  }
+
+  li {
+    list-style-position: inside;
+  }
+
+
+  .underline {
+    display: inline-block;
+    border-bottom: 1px solid #000;
+    &--short {
+      width: 50px;
+    }
+    &--long {
+      width: 250px;
+    }
+  }
+}
+
+.fair-lending {
+  @include clearfix;
+  font-family: $sans-serif;
+  padding-top: 80px;
+
+  ol {
+    list-style-position: inside;
+  }
+}
+
+.fha_sponsorship {
+  table {
+    border-spacing: 10px;
+    border-collapse: separate;
+    &:first-of-type {
+      margin-top: 50px;
+    }
+    thead tr td {
+      border: 0;
+      font-weight: bold;
+    }
+    tr{
+      border: 0;
+      &:first-of-type{
+        font-weight: bold;
+      }
+      td {
+      vertical-align: top;
+      border: 0;
+      border-top: 1px solid #000;
+      padding: 5px 0px 40px 0px;
+      }
+      th {
+        border: 0;
+        vertical-align: top;
+        padding-top: 0px;
+        span:first-of-type{
+          font-weight: bold;
+        }
+      }
+      td,
+      th {
+        span {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+.quality-control table {
+  border-spacing: 10px;
+  border-collapse: separate;
+  tr td {
+    border: 0;
+    border-top: 1px solid #000;
+    vertical-align: top;
+    padding-top: 5px;
+  }
+}
+.signature_table {
+  width: 500px;
+  border-spacing: 10px;
+  border-collapse: separate;
+  padding-top: 50px;
+  padding-left: 0px;
+  tr {
+    padding-bottom: 25px;
+    padding-left: 0px;
+    .no-border {
+      border: 0;
+    }
+    td {
+      padding: 10px 15px 45px 0px;
+      border: 0;
+      border-top: 1px solid #696969;
+      span {
+        display: block;
+        &:first-of-type {
+          padding-bottom: 5px;
+        }
+        &:not(:first-child){
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}

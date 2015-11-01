@@ -1,0 +1,125 @@
+- content_for :broker_center_body do
+  %article.sub-page-content{"ng-controller" => "QuickPricerController", "ng-init" => "init('#{State.california.id}', '#{QuickPricer::RateLockTerm::ThirtyDays}', '#{QuickPricer::PropertyUse::Primary}', '#{QuickPricer::PropertyType::SingleFamily}', '#{QuickPricer::Unit::OneUnit}', '#{QuickPricer::Story::OneStory}', '#{QuickPricer::AutoUwSystem::NotSpecific}')"}
+    %h2.sub-title
+      Quick Pricer
+    %p.slogan
+      Enter your info to get immediate rates.
+    %h3.bordered-title
+      Pricing info:
+    %form.form.inner-wrap.forms.quick-pricer
+      .form-errors.flash-error{"ng-show" => "hasErrors()"}
+        Please Review & Complete All Required Fields.
+        -#.error{"ng-repeat" => "(key, error) in errors"}
+          -#{{ error }}
+      %fieldset.inner-form  
+        %ul.info-three-column
+          %li.form-group{"ng-class": "{'has-error': hasError('loan_amount')}"}
+            %input{type: "number", step: "0.01", placeholder: "New Loan Amount", "ng-model" => "quickPricerObject.loan_amount"}
+          %li.form-group{"ng-class": "{'has-error': hasError('appraisal_amount')}"}
+            %input{type: "number", placeholder: "Est. Appraised Value", "ng-model" => "quickPricerObject.appraisal_amount"}
+          %li.form-group
+            %label Mortgage Insurance
+            = select_tag "mortgage_insurance", options_for_select([["Mtg. Insurance", ""]]) + options_for_select(["Yes", "No"]), "ng-model" => "quickPricerObject.mortgage_insurance", "ui-select2" => "defaultSelect2Options"
+          %li.form-group{"ng-class": "{'has-error': hasError('state_id')}"}
+            = select_tag "state", options_for_select([["State", ""]]) + options_from_collection_for_select(State.selectable_states, :id, :name, nil), "ng-model" => "quickPricerObject.state_id", "ui-select2" => "defaultSelect2Options", "ng-required" => "true"
+          %li.form-group{"ng-class": "{'has-error': hasError('county_fips')}"}
+            %select{"ui-select2" => "defaultSelect2Options", "ng-model" => "countySelect.selectedCounty", "ng-required" => "true" }
+              %option{value: ""} County
+              %option{ng: { repeat: "county in countySelect.availableCounties track by county['@fips']" }, value: "{{ county }}" }
+                {{ county['@name'] }}
+          %li.form-group
+            %label Borrower Paid MI
+            = select_tag "borrower_paid_mi", options_for_select([["Borrower Paid MI", ""]]) + options_for_select(["Yes", "No"]), "ng-model" => "quickPricerObject.borrower_paid_mi", "ui-select2" => "defaultSelect2Options"
+          %li.form-group
+            %input{type: "number", placeholder: "Cash-Out Amount", "ng-model" => "quickPricerObject.cash_out_amount"}
+          %li.form-group
+            = select_tag "loan_purpose", options_for_select([["Purpose", ""]]) + options_for_select(QuickPricer::LOAN_PURPOSES), "ng-model" => "quickPricerObject.loan_purpose", "ui-select2" => "defaultSelect2Options"
+          %li.form-group
+            %input{type: "number", step: 0.01, placeholder: "CLTV", "ng-model" => "quickPricerObject.cltv"}
+          %li.form-group
+            = select_tag "property_type", options_for_select(QuickPricer::PROPERTY_TYPES, QuickPricer::PropertyType::SingleFamily), "ng-model" => "quickPricerObject.property_type", "ui-select2" => "defaultSelect2Options"
+          %li.form-group
+            %label Units
+            = select_tag "units", options_for_select(QuickPricer::UNITS), "ng-model" => "quickPricerObject.units", "ui-select2" => "defaultSelect2Options"
+          %li.form-group
+            %label Stories
+            = select_tag "stories", options_for_select([["Number of Stories", ""]]) + options_for_select(options_for_story_select), "ng-model" => "quickPricerObject.stories", "ui-select2" => "defaultSelect2Options"
+          %li.form-group
+            = select_tag "property_use", options_for_select(QuickPricer::PROPERTY_USES, QuickPricer::PropertyUse::Primary), "ng-model" => "quickPricerObject.property_use", "ui-select2" => "defaultSelect2Options"
+          %li.form-group
+            %label Waived Escrows
+            = select_tag "waived_escrows", options_for_select([["Waive Escrows?", ""]]) + options_for_select(["Yes", "No"]), "ng-model" => "quickPricerObject.waived_escrows", "ui-select2" => "defaultSelect2Options"
+          %li.form-group{"ng-class": "{'has-error': hasError('credit_score')}"}
+            %input{type: "number", placeholder: "Credit Score ", "ng-model" => "quickPricerObject.credit_score"}
+          %li.form-group  
+            %input{type: "number", step: "0.01", placeholder: "DTI", "ng-model" => "quickPricerObject.debt_to_income_pct"}
+          %li.form-group
+            = select_tag "rate_lock_term", options_for_select([["Lock?", ""]]) + options_for_select(QuickPricer::RATE_LOCK_TERMS), "ng-model" => "quickPricerObject.rate_lock_term", "ui-select2" => "defaultSelect2Options"
+          %li.form-group
+            %label Auto U/W System
+            = select_tag "auto_uw_system", options_for_select([["U/W System?", ""]]) + options_for_select(QuickPricer::AUTO_UW_SYSTEM_OPTIONS), "ng-model" => "quickPricerObject.auto_uw_system", "ui-select2" => "defaultSelect2Options"
+        %ul.text-light-gray.bordered-form
+          %li.form-group.checkbox
+            %label.db--force.pb0--force Loan Term:
+            - QuickPricer::LOAN_TERMS.each_with_index do |term, i|
+              %label
+                = check_box_tag(:loan_term, term, nil, {"ng-model" => "quickPricerObject.loan_term[#{i}]", "ng-true-value" => "'#{term}'"})
+                = term
+          %li.form-group.checkbox
+            %label.db--force.pb0--force Amortization Type:
+            - QuickPricer::AMORTIZATION_TYPES.each_with_index do |type, i|
+              %label
+                = check_box_tag(:amortization_type, type, nil, {"ng-model" => "quickPricerObject.amortization_type[#{i}]", "ng-true-value" => "'#{type}'"})
+                = type
+          %li.form-group.checkbox
+            %label.db--force.pb0--force ARM Fixed Term:
+            - QuickPricer::ARM_FIXED_TERMS.each_with_index do |term, i|
+              %label
+                = check_box_tag(:arm_fixed_term, term, nil, {"ng-model" => "quickPricerObject.arm_fixed_term[#{i}]", "ng-true-value" => "'#{term}'"})
+                = term
+          %li.form-group.checkbox
+            %label.db--force.pb0--force Product Type:
+            - QuickPricer::PRODUCT_TYPES.each_with_index do |type, i|
+              %label
+                = check_box_tag(:product_type, type, nil, {"ng-model" => "quickPricerObject.product_type[#{i}]", "ng-true-value" => "'#{type}'"})
+                = type
+      %fieldset.inner-form.tar
+        %button.bt-cta.bt-cta--red{"ng-click" => "price()"} Calculate
+    %h3{"ng-show" => "products"}
+      Results:
+    .pricing.pricing--result
+      .spinner{"ng-show" => "searching"}
+        = image_tag("ajax-loader.gif")
+
+      %div{"ng-show" => "products"}
+        %div{"ng-show" => "products.length == 0"}
+          No products found
+        %div{"ng-show" => "products.length > 0"}
+          %p
+            All borrower paid price quotes show below are for estimation purposes only, do not include broker comp, and are subject to change without notice.
+          %ul
+            %div{"ng-repeat" => "product in products"}
+              %p.clearfix
+                %strong.fl {{ product.product_name }}
+                %span.fs16.fr Result as of {{ getCurrentTime() }}
+              %table
+                %tbody
+                  %tr
+                    %td Rate:
+                    %td {{ product.rate }}%
+                  %tr
+                    %td Amortization:
+                    %td {{ product.amortization_term_months }} Months {{ product.amortization_type_name }}
+                  %tr
+                    %td Loan:
+                    %td {{ product.loan_term_months }} Months {{ product.loan_type_name }}
+                  %tr
+                    %td Origination P & I:
+                    %td ${{ product.origination_pand_i }}
+                  %tr
+                    %td Price:
+                    %td {{ product.price }}
+                  %tr
+                    %td Lock Period:
+                    %td {{ product.lock_period }}
+= render "page_body"

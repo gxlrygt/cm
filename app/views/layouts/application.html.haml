@@ -1,0 +1,22 @@
+!!!
+%html{:lang => "en", "ng-app" => "wholesale"}
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}
+    %title Commerce Mortgage Wholesale
+    %meta{:charset => "utf-8"}
+    %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}
+    %meta{:content => "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0", :name => "viewport"}
+    = stylesheet_link_tag    'application', media: 'all'
+    %link{rel: "stylesheet", href: "https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"}
+    = csrf_meta_tags
+  %title Wholesale
+  %body.uncss-root{class: @page_name || 'sub-page'}
+    = render "shared/header"
+
+    .container#main-content
+      =yield
+
+    = render "shared/footer"
+    = javascript_include_tag 'application'
+    :javascript
+      try{Typekit.load({ async: true });}catch(e){}

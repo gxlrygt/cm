@@ -1,0 +1,19 @@
+%section.hero-content.hero-loan
+  %section.content-wrap
+    %h1.title
+      
+
+%section.content-wrap
+  = render "shared/flash"
+  %h1 Edit Your Profile
+
+  = simple_form_for(@user, url: user_settings_path, html: { class: 'form-horizontal' }) do |f|
+    = render 'shared/error_messages', object: f.object
+    = f.input :first_name
+    = f.input :last_name
+    = f.simple_fields_for :external_site_passwords do |ff|
+      %hr
+      = ff.object.external_site
+      = ff.input :username
+      = ff.input :password, as: :string
+    = f.submit

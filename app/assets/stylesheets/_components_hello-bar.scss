@@ -1,0 +1,90 @@
+@import 'bourbon';
+@import 'neat';
+
+.hello-bar {
+  background: #fff;
+  position: relative;
+  z-index: 7;
+  text-align: center;
+}
+.hello-bar__collapse-bt {
+  padding: 10px;
+  color: $wh-red;
+  display: block;
+  &:hover {
+    color: $wh-dark-gray;
+  }
+  &:after {
+    content:"▶";
+    position: relative;
+    display: inline-block;
+    font-size: 14px;
+    top: -1px;
+    margin-left: 5px;
+  }
+  &.close {
+    &:after {
+      content:"▼";
+    }
+  }
+}
+.hello-bar__content{
+  display: none;
+  font-size: 34px;
+  font-weight: 100;
+  padding: 20px 0px;
+  color: $wh-medium-gray;
+  &.open {
+    display: block;
+  }
+}
+
+// Turn Times
+
+.stats {
+  $action-color: #477dca !default;
+  $stats-color: #252729;
+
+  //height: 140px;
+
+  ul {
+    padding: 0;
+    width: 652px;
+    margin: 0px auto;
+    @include clearfix;
+  }
+
+  li {
+    color: $wh-dark-gray;
+    text-transform: uppercase;
+    display: inline;
+    font-size: 16px;
+    font-weight: 600;
+    float: left;
+    line-height: 2.5em;
+    padding: 0 0.5em;
+
+    &:first-child {
+      padding-left: 0;
+    }
+  }
+
+  span {
+    color: $wh-red;
+    display:inline-block;
+    font-size: 16px;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    font-weight: 600;
+    border-radius: 50%;
+    background: #ebebeb;
+  }
+  .times{
+    text-align: center;
+    font-size: 16px;
+    margin-top: 15px;
+    color:$wh-dark-gray;
+    font-weight: 300;
+  }
+}

@@ -1,0 +1,148 @@
+$tablet-footer: 700px;
+
+.footer-meta {
+  height: 120px;
+  background-color: white;
+  @include pad;
+  aside {
+    position: relative;
+    height: 100%;
+    @include span-columns(4 of 12);
+    img {
+      width: 100%;
+      @include vertical-align;
+    }
+  }
+  .copyright {
+    font-size: 10px;
+    line-height: 14px;
+    letter-spacing: 1px;
+    @include span-columns(6 of 12);
+    @include vertical-align;
+    &:last-child{
+      margin:0;
+    }
+  }
+  .portal {
+    height: 100%;
+    border: 3px solid $wh-red;
+    color: $wh-red;
+    text-transform: uppercase;
+    line-height: 55px;
+    text-align: center;
+    font-weight: 800;
+    @include span-columns(2 of 12);
+  }
+  @include media(max-width $tablet-footer){
+
+  aside,
+  .copyright {
+    text-align: center;
+    @include span-columns(12);
+    @include pad();
+    img {
+      height: 80%;
+      width: auto;
+    }
+  }
+
+  }
+}
+
+
+// New Styles
+
+.footer {
+  $base-spacing: 1.5em !default;
+  $action-color: #477DCA !default;
+  $medium-screen: em(640) !default;
+  $large-screen: em(860) !default;
+  $footer-background: #000;
+  $footer-color: white;
+  $footer-link-color: transparentize($footer-color, 0.6);
+  $footer-disclaimer-color: transparentize($footer-color, 0.6);
+  $mobile-footer: 500px;
+
+  padding: ($base-spacing * 2) $gutter;
+  width: 100%;
+  position: relative;
+  &:after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: image-url('diamond-pattern.png');
+    background-size: cover;
+    display: block;
+    z-index: 1;
+    opacity: 0.5;
+  }
+  &__border{
+    height: 9px;
+    display: block;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background: image-url("footer-border.jpg") ;
+    position: relative;
+    z-index: 4;
+  }
+  background: darken($wh-medium-gray, 20);
+
+  #phone-number {
+    font-size: 1em;
+    a {
+      color: $wh-red;
+    }
+  }
+
+  .footer-logo {
+    margin-bottom: 2em;
+    text-align: center;
+
+    img {
+      height: 3em;
+    }
+  } 
+
+  .footer-links {
+    @include fill-parent;
+  }
+
+  ul {
+    position: relative;
+    z-index: 9;
+    padding: 0;
+    @include span-columns(2.4);
+    &:first-child li {
+      text-align: left;
+    }
+  }
+
+  li {
+    line-height: 1.5em;
+    list-style: none;
+    text-align: left;
+    @include media(max-width $mobile-footer){
+      text-align: center;
+    }
+  }
+
+  li a {
+    color: $footer-link-color;
+    text-decoration: none;
+
+    &:focus,
+    &:hover {
+      color: transparentize($footer-color, 0);
+    }
+  }
+
+  li h3 {
+    color: $footer-color;
+    font-size: 1em;
+    margin-bottom: 0.4em;
+  }
+}  

@@ -1,0 +1,30 @@
+$base-color: #cfabab;
+$wh-red: #e2231a;
+$wh-dark-gray: #252729;
+$wh-medium-gray: #555559;
+$wh-light-gray: #9b9b9b;
+$wh-highlight-gray: #f1f1f1;
+$wh-braker-bay: #4b7a7a;
+
+$action-color: $wh-red;
+
+// Gradient Overlay
+
+$transparency-top: 0.9;
+$transparency-bottom: 0.6;
+$transparency-left: 0.8;
+$transparency-right: 0.8;
+$vertical-angle: 0deg;
+$horizontal-angle: 90deg;
+
+.text-red {
+  color: $wh-red;
+}
+.text-dark-gray {
+  color: $wh-dark-gray;
+}.text-medium-gray {
+  color: $wh-medium-gray;
+}
+.text-light-gray {
+  color: $wh-light-gray;
+}

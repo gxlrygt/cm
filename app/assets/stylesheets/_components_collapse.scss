@@ -1,0 +1,51 @@
+.collapse {
+  margin: 0 0 30px 0;
+  padding: 0;
+  width: 100%;
+  &__header {
+    border-top: 3px solid $wh-red;
+    margin: 1px;
+    color: $wh-red;
+    display: block;
+    font-weight: 300;
+    padding: 10px 0;
+    font-size: 18px;
+    cursor: pointer;
+    position: relative;
+    .arrow {
+      background: image-url("arrow-down.svg") no-repeat center;
+      width: 40px;
+      margin-top: 3px;
+      height: 20px;
+      display: inline-block;
+      float:right;
+      padding: 3px 0;
+      @include transform(rotate(0deg));
+      @include transition(all 0.25s ease-in-out);
+    }
+    &.open {
+      font-weight: bold;
+      //text-transform: uppercase;
+      .arrow{
+        @include transform(rotate(180deg));
+      }
+    }
+  }
+  &__content {
+    padding: 5px 10px;
+    display: none;
+    margin: 0 0 20px 0;
+    .order--number {
+      li {
+        font-weight: 400;
+        color: #000;
+        }
+      &--red > li {
+        color: $wh-red !important;
+        p {
+          color: #000 !important;
+        }
+      }
+    }
+  }
+}

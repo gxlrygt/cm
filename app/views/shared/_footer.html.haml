@@ -1,0 +1,64 @@
+%footer
+  .footer{:role => "contentinfo"}
+    %section.content-wrap
+      .footer-links
+        %ul
+          %li
+            = image_tag "House_icon.svg", width:"40", class:"mr30", alt: "wholesale"
+        %ul
+          %li
+            %h3
+              Loan Programs
+          %li
+            = link_to "Jumbo", loan_programs_path
+          %li
+            = link_to "Conventional", loan_programs_conventional_path
+          %li
+            = link_to "ARMs", loan_programs_arms_path
+          %li
+            = link_to "HARP", loan_programs_harp_path
+          %li
+            = link_to "Government", loan_programs_government_path
+        %ul
+          %li
+            %h3
+              Broker Center
+          %li
+            = link_to "Rates", broker_center_path
+          %li
+            = link_to "Quick Pricer", broker_center_quick_pricer_path
+          %li
+            = link_to "Resources", broker_center_resources_path
+          %li
+            = link_to "Appraisals", broker_center_appraisals_path
+          %li
+            = link_to "Get Approved", new_broker_approval_form_path
+          %li
+            = link_to "Submit a Loan", new_loan_path
+        %ul
+          %li
+            %h3
+              About Us
+          %li
+            = link_to "Our Approach", about_path
+          %li
+            = link_to "Press & News", about_latest_news_path
+          %li
+            = link_to "Our Team", about_team_path
+          %li
+            = link_to "Join Us", about_join_us_path
+          %li
+            = link_to "Contact Us", about_contact_us_path
+        %ul
+          %li
+            %h3  Get In Touch
+          %li#phone-number
+            %a{:href => "tel:+1.855.375.8626"}1.855.37.JUMBO
+  %div.footer__border
+  %section.content-wrap.footer-meta
+    %aside
+      = image_tag "icons.png", alt: ""
+    %p.copyright
+      Copyright © 2015 Commerce Home Mortgage, Inc DBA Commerce Home Mortgage Wholesale. We are a HUD-Approved FHA Full Eagle Lender. NMLS ID #1839. Lending available in Colorado, Licensed by the Department of Business Oversight under the California Residential Mortgage Lending Act #4150083, California Dept. of Real Estate Broker #01218426, Florida License # MLD946 and Nevada Mortgage Lending Division #3580.
+    %a.portal{:href => "https://campaigns.commercemtg.com/index/logon"}
+      Portal

@@ -1,0 +1,599 @@
+- content_for :loan_programs_body do
+  %article.sub-page-content
+    %h2.sub-title
+      Government Loans
+    %p.slogan
+      Our pricing for VA and FHA loans makes home ownership accessible for all buyers.
+    %h2.heading.mb15--force
+      Optional Terms:
+    %ul.order--number.mb40
+      %li
+        720+ FICO
+      %li
+        $175,000 - county loan limit
+      %li
+        All fixed term mortgages
+      %li
+        Single family primary residences
+    %h2.heading.mb0
+      FHA
+    %a.link--red.download-link{:href=> "http://portal.hud.gov/hudportal/HUD?src=/program_offices/administration/hudclips/handbooks/hsgh/4155.1"}
+      Download Full Guidelines
+    .collapse
+      %div.collapse__header
+        Premier
+        %span.arrow
+      %div.collapse__content
+        .matrices
+          %table
+            %tbody
+              %thead
+                %tr
+                  %td{:colspan => "3"} maximum ltv &amp; Fico Requirements
+              %tr.matrix-category
+                %td
+                  Transaction Type
+                %td
+                  maximum LTV/CLTV
+                %td
+                  minimum fico score
+              %tr
+                %td
+                  Purchase
+                %td
+                  96.5% / 105%
+                %td{:rowspan => "3"}
+                  620
+              %tr
+                %td
+                  No Cash Out Refinance
+                %td
+                  97.75%
+              %tr
+                %td
+                  Cash Out Refinance
+                %td
+                  85%
+          %table  
+            %tbody
+              %thead
+                %tr
+                  %td{:colspan => "4"}
+                    Mortgage insurance Premium &gt; 15 year terms
+              %tr.matrix-category
+                %td
+                  Transaction Type
+                %td
+                  maximum LTV
+                %td
+                  UFMIP
+                %td
+                  Annual
+              %tr
+                %td{:rowspan => "2"}
+                  Purchase, No Cash Out Refinance or Cash Out Refinance ≤ $625,500
+                %td
+                  &gt; 95%
+                %td{:rowspan => "2"}
+                  1.75%
+                %td
+                  0.85%
+              %tr
+                %td
+                  ≤ 95%
+                %td
+                  0.80%
+              %tr
+                %td{:rowspan => "2"}
+                  Purchase,
+                  No Cash Out Refinance or
+                  Cash Out Refinance
+                  &gt;
+                  $625,500
+                %td
+                  &gt; 95%
+                %td{:rowspan => "2"}
+                  1.75%
+                %td
+                  1.05%
+              %tr
+                %td
+                  ≤ 95%
+                %td
+                  1.00%
+          %table
+            %tbody
+              %thead
+                %tr
+                  %td{:colspan => "4"}
+                    Mortgage insurance Premium ≤ 15 year terms
+              %tr.matrix-category
+                %td
+                  Transaction Type
+                %td
+                  maximum LTV
+                %td
+                  UFMIP
+                %td
+                  Annual
+              %tr
+                %td{:rowspan => "2"}
+                  Purchase,
+                  No Cash Out Refinance or
+                  Cash Out Refinance
+                  ≤
+                  $625,500
+                %td
+                  &gt; 95%
+                %td{:rowspan => "2"}
+                  1.75%
+                %td
+                  0.70%
+              %tr
+                %td
+                  ≤ 95%
+                %td
+                  0.45%
+              %tr
+                %td{:rowspan => "3"}
+                  Purchase,
+                  No Cash Out Refinance or
+                  Cash Out Refinance
+                  &gt;
+                  $625,500
+                %td
+                  &gt; 95%
+                %td{:rowspan => "3"}
+                  1.75%
+                %td
+                  0.95%
+              %tr
+                %td
+                  78.01%–90%
+                %td
+                  0.70%
+              %tr
+                %td
+                  ≤ 78%
+                %td
+                  0.45%
+      %div.collapse__header
+        Expanded
+        %span.arrow
+      %div.collapse__content
+        .matrices 
+          %table
+            %tbody
+              %thead
+                %tr
+                  %td{:colspan => "3"}
+                    maximum ltv / Fico Requirements
+              %tr.matrix-category
+                %td
+                  Transaction Type
+                %td
+                  maximum LTV/CLTV
+                %td
+                  minimum fico score
+              %tr
+                %td
+                  Purchase
+                %td
+                  96.5%
+                %td{:rowspan => "3"}
+                  620
+              %tr
+                %td
+                  No Cash Out Refinance
+                %td
+                  97.75%
+              %tr
+                %td
+                  Cash Out Refinance
+                %td
+                  85%
+    %h2.heading.mb0
+      VA
+    %a.link--red.download-link{:href=> "http://www.benefits.va.gov/warms/pam26_7.asp"}
+      Download Full Guidelines
+    / %p.body-text-1
+    /   Short descriptor goes here. Short descriptor of goes here. Short descriptor goes here. Short descriptor goes here.
+    .collapse
+      %div.collapse__header
+        Premier
+        %span.arrow
+      %div.collapse__content
+        .matrices
+          %table
+            %tbody
+              %thead
+                %tr
+                  %td{:colspan => "3"}
+                    maximum ltv/cltv &amp; Fico Requirements
+              %tr.matrix-category
+                %td
+                  Transaction Type
+                %td
+                  maximum LTV/CLTV
+                %td
+                  minimum fico score
+              %tr
+                %td
+                  Purchase and Rate/Term Refinance
+                %td
+                  100%
+                %td{:rowspan => "2"}
+                  620
+              %tr
+                %td
+                  Cash Out Refinance
+                %td
+                  100%
+          %table
+            %tbody
+              %thead
+                %tr
+                  %td{:colspan => "2"}
+                    maximum Guaranty
+              %tr.matrix-category
+                %td
+                  Loan Amount
+                %td
+                  Maximum Potential Guaranty
+              %tr
+                %td
+                  Up to $45,000
+                %td
+                  50% of loan amount
+              %tr
+                %td
+                  $45,001—$56,250
+                %td
+                  $22,500
+              %tr
+                %td
+                  $56,251—$144,000
+                %td
+                  40% of loan amount, maximum of $36,000
+              %tr
+                %td
+                  $144,001—$417,000
+                %td
+                  25% of loan amount
+              %tr
+                %td
+                  Greater than $417,000
+                %td
+                  25% of VA county loan limit or 25% of loan amount
+      %div.collapse__header
+        Expanded 
+        %span.arrow
+      %div.collapse__content
+        .matrices
+          %table
+            %tbody
+              %thead
+                %tr
+                  %td{:colspan => "6"}
+                    Primary Residence
+              %tr.matrix-category
+                %td
+                  Loan Type
+                %td
+                  Purpose
+                %td
+                  Property type
+                %td
+                  Loan Amount
+                %td
+                  LTV/CLTV
+                %td
+                  minimum fico score
+              %tr
+                %td{:rowspan => "2"}
+                  VA Standard
+                %td
+                  Purchase; IRRRL
+                %td{:rowspan => "2"}
+                  1–4 Units
+                %td{:rowspan => "2"}
+                  Conforming &amp;
+                  Non-Conforming
+                %td{:rowspan => "2"}
+                  100%
+                %td{:rowspan => "2"}
+                  640
+              %tr
+                %td
+                  Cash out
+              %tr
+                %td{:rowspan => "5"}
+                  VA Advantage
+                %td
+                  Purchase; IRRRL
+                %td
+                  1–4 Units
+                %td{:rowspan => "3"}
+                  Conforming
+                %td
+                  105%
+                %td
+                  550
+              %tr
+                %td
+                  IRRRL No Appraisal
+                %td
+                  1 Unit
+                %td
+                  Unlimited
+                %td
+                  620
+              %tr
+                %td
+                  Cash Out
+                %td
+                  1–4 Units
+                %td
+                  105%
+                %td
+                  550
+              %tr
+                %td
+                  Purchase; IRRRL
+                %td
+                  1–2 Units
+                %td{:rowspan => "2"}
+                  Non-Conforming
+                %td
+                  105%
+                %td
+                  550
+              %tr
+                %td
+                  IRRRL No Appraisal
+                %td
+                  1 Unit
+                %td
+                  Unlimited
+                %td
+                  620
+          %table
+            %tbody
+              %thead
+                %tr
+                  %td{:colspan => "6"}
+                    Secondary Residence &amp; Investment Property
+              %tr.matrix-category
+                %td
+                  Loan Type
+                %td
+                  Purpose
+                %td
+                  Property type
+                %td
+                  Loan Amount
+                %td
+                  LTV/CLTV
+                %td
+                  minimum fico score
+              %tr
+                %td
+                  VA Standard
+                %td
+                  IRRRL
+                %td
+                  1–4 Units
+                %td
+                  Conforming &amp;
+                  Non-Conforming
+                %td
+                  100%
+                %td
+                  640
+              %tr
+                %td{:rowspan => "2"}
+                  VA Advantage
+                %td
+                  IRRRL
+                %td
+                  1–4 Units
+                %td
+                  Conforming
+                %td
+                  105%
+                %td
+                  550
+              %tr
+                %td
+                  IRRRL
+                %td
+                  1–2 Unit
+                %td
+                  Non-Conforming
+                %td
+                  105%
+                %td
+                  550
+          %table
+            %tbody
+              %thead
+                %tr
+                  %td{:colspan => "2"}
+                    entitlement/guaranty
+              %tr.matrix-category
+                %td
+                  Loan Amount
+                %td
+                  Maximum Potential Guaranty
+              %tr
+                %td
+                  $45,001–$56,250
+                %td
+                  $22,500
+              %tr
+                %td
+                  $56,251–$144,000
+                %td
+                  40% of loan amount, maximum $36,000
+              %tr
+                %td
+                  $144,001–$417,000
+                %td
+                  25% of loan amount, maximum $104,250
+          %table
+            %tbody
+              %thead
+                %tr
+                  %td{:colspan => "4"}
+                    funding fee table—first time use
+              %tr.matrix-category
+                %td
+                  Loan Type
+                %td
+                  Down Payment
+                %td
+                  Veteran
+                %td
+                  Reservist
+              %tr
+                %td{:rowspan => "3"}
+                  Purchase
+                %td
+                  &lt; 5%
+                %td
+                  2.15%
+                %td
+                  2.40%
+              %tr
+                %td
+                  &gt; 5% — &lt;10%
+                %td
+                  1.50%
+                %td
+                  1.75%
+              %tr
+                %td
+                  10% or more
+                %td
+                  1.25%
+                %td
+                  1.50%
+              %tr
+                %td
+                  Refinance (C/O &amp; R/T)
+                %td
+                  –
+                %td
+                  2.15%
+                %td
+                  2.40%
+              %tr
+                %td
+                  VA IRRRL
+                %td
+                  –
+                %td
+                  –
+                %td
+                  –
+              %tr
+                %td
+                  Assumptions
+                %td
+                  –
+                %td
+                  –
+                %td
+                  –
+          %table
+            %tbody
+              %thead
+                %tr
+                  %td{:colspan => "4"}
+                    funding fee table—subsequent use
+              %tr.matrix-category
+                %td
+                  Loan Type
+                %td
+                  Down Payment
+                %td
+                  Veteran
+                %td
+                  Reservist
+              %tr
+                %td{:rowspan => "3"}
+                  Purchase
+                %td
+                  &lt; 5%
+                %td
+                  3.30%
+                %td
+                  3.30%
+              %tr
+                %td
+                  &gt; 5% — &lt;10%
+                %td
+                  1.50%
+                %td
+                  1.75%
+              %tr
+                %td
+                  10% or more
+                %td
+                  1.25%
+                %td
+                  1.50%
+              %tr
+                %td
+                  Refinance (C/O &amp; R/T)
+                %td
+                  –
+                %td
+                  3.30%
+                %td
+                  3.30%
+              %tr
+                %td
+                  VA IRRRL
+                %td
+                  –
+                %td
+                  0.50%
+                %td
+                  0.50%
+              %tr
+                %td
+                  Assumptions
+                %td
+                  –
+                %td
+                  0.50%
+                %td
+                  0.50%
+          %table
+            %tbody
+              %thead
+                %tr
+                  %td{:colspan => "2"}
+                    Loan programs &amp; Terms
+              %tr.matrix-category
+                %td
+                  Programs
+                %td
+                  Terms
+              %tr
+                %td
+                  Government 15
+                %td
+                  15 years
+              %tr
+                %td
+                  Givernment 30
+                %td
+                  25, 30 years
+              %tr
+                %td
+                  ARMs
+                %td
+                  N/A
+= render "page_body"

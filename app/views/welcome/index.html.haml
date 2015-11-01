@@ -1,0 +1,99 @@
+%section
+  %article.welcome.hero-content
+    = image_tag("img-home-hero1.jpg")
+    .copy
+      %h5.mb15--force.heading Welcome Home.
+      %h2.heading.mb0--force
+        Submit. Process. Fund. Repeat.
+      %h3.heading
+        Wholesale lending made simple, personal, and quick.
+      = link_to "Get Started", new_loan_path, class: "bt-cta bt-cta--white mb40"
+    .overlay
+%section.content-wrap
+  .grid-items-lines
+    = link_to loan_programs_path, class: "grid-item" do
+      %h3.fs34.mb0--force.medium--force
+        Loan Programs
+        %span.arrow-red
+      %h3.heading View our wide range of loan options.
+    = link_to broker_center_path, class: "grid-item" do
+      %h3.fs34.mb0--force.medium--force
+        Check Rates
+        %span.arrow-red
+      %h3.heading Find the latest rates with our new Quick Pricer.
+    = link_to about_path, class: "grid-item" do
+      %h3.fs34.mb0--force.medium--force
+        About Us
+        %span.arrow-red
+      %h3.heading Reinventing how the industry closes loans.
+%section
+  %article.hero-content
+    = image_tag("img-home-hero2.jpg")
+    .copy
+      %h5.mb0--force.heading Black Card Member Service
+      %h3.heading
+        A host of reasons make partnering with us the right choice.
+      = link_to "Learn More", about_team_path, class: "bt-cta bt-cta--white mb40"
+    .overlay
+%section.latest-news.latest-news__small    
+  %article.news-list.df
+    .news  
+      %ul.news-quotes__small
+        %li.mb25
+          %h6
+            We Don't Like to Brag but...    
+        %li
+          9/10
+          %span
+            Brokers Reccomend Us
+        %li
+          Fastest
+          %span
+            Growing Wholesale Lender
+        %li
+          95%
+          %span
+            Repeat Business
+        %li
+          100+ Years
+          %span
+            Collective Industry Experience
+/ %section.latest-news
+/   %article.news-list.df
+/     .news
+/       %div.news__content
+/         %h2.heading 
+/           You're In Good Hands
+/         %h3.heading
+/           What our brokers have to say about working with us:
+/         %ul.news-quotes  
+/           %li
+/             %p.news__description
+/               I’ve been a broker in Orange County for over 20 years and Gary is hands down, the best Rep I’ve ever dealt with in my career.
+/             %span.news__name Stan, CA
+/           %li
+/             %p.news__description 
+/               Lenders might beat
+/               %span.fancy_title.last-red CHMW
+/               in one area or another, but nobody puts it all together to be the best all around lender like you guys!  
+/             -# %p.news__description 
+/             -#   Chi gets all of my business.
+/             %span.news__name Julie, CA
+/           %li
+/             %p.news__description 
+/               This business is complicated and I can always count on you guys to make things right if we hit a snag.
+/               Trust is everything to me!
+/             %span.news__name Jeff, CA
+%section
+  %article.hero-content
+    = image_tag("img-home-hero3.jpg")
+    .copy
+      %h5.mb0--force.heading Join Our Team
+      %h3.heading
+        We're changing the way the lending industry does business, one loan at a time.
+      = link_to "Join Us", about_join_us_path, class: "bt-cta bt-cta--white mb40"
+    .overlay
+  / #work-with-us-box
+  /   %a
+  /     %span
+  /       Join our team

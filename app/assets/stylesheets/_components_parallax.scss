@@ -1,0 +1,37 @@
+$parallax-window-height: 420px;
+$parallax-background-height: $parallax-window-height + 50;
+
+.parallax-window {
+  max-height: $parallax-window-height;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+
+.parallax-static-content {
+  color: #9A9A8A;
+  padding: 4em 0 10em 0;
+  position: relative;
+  z-index: 9;
+  pointer-events: none;
+  .title {
+    float: left;
+    margin: 0;
+  }
+}
+
+.parallax-background {
+  // background: url("https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png") repeat;
+  background-position: center center;
+  background-size: cover;
+  height: $parallax-background-height;
+  left: 0;
+  position: absolute;
+  //top: - $parallax-window-height / 3;
+  width: 100%;
+  margin-top: 50px;
+  //margin-top: 90px;
+}
+
+// Based on http://codepen.io/skeurentjes/

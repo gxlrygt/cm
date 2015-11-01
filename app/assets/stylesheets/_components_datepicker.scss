@@ -1,0 +1,64 @@
+.date {
+  position: relative;
+}
+
+.bootstrap-datetimepicker-widget.dropdown-menu {
+  margin: 2px 0;
+  padding: 4px;
+  background: white;
+  width: 100% !important;
+  display: block;
+  top: -10px;
+  z-index: 1;
+  border-radius: 2px;
+  font-size: 10px;
+  border: 2px solid #e5e5e5;
+  border-top: 0;
+}
+
+.bootstrap-datetimepicker-widget.dropdown-menu.bottom:before,
+.bootstrap-datetimepicker-widget.dropdown-menu.bottom:after,
+.bootstrap-datetimepicker-widget.dropdown-menu.top:before,
+.bootstrap-datetimepicker-widget.dropdown-menu.top:after {
+  display: none;
+}
+
+.prev,
+.next {
+  &:after{  
+    width: 0;
+    height: 0;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    top: 12px;
+    border-radius: 3px;
+  }
+}
+
+.prev:after {
+  left: 8px;
+  border-right: 14px solid red;
+}
+.next:after {
+  right: 8px;
+  border-left: 14px solid red;
+}
+
+.bootstrap-datetimepicker-widget table td.active, .bootstrap-datetimepicker-widget table td.active:hover{
+  background: red !important  ;
+}
+
+.input-group-btn {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  .btn {
+      text-align: center;
+      width: 44px;
+      height: 39px;
+      top: 0;
+      right: 0;
+      border-radius: 0;
+      padding: 0;
+  }
+}

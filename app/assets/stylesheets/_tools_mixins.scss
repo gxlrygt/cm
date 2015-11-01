@@ -1,0 +1,26 @@
+@mixin breakpoint($point) {
+  @if $point == desktop {
+    @media (max-width: 1600px) {
+      @content;
+    }
+  }
+  @else if $point == tablet {
+    @media (max-width: 1000px) {
+      @content;
+    }
+  }
+  @else if $point == mobile {
+    @media (max-width: 670px) {
+      @content;
+    }
+  }
+}
+
+/* Mixin */
+@mixin vertical-align {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}

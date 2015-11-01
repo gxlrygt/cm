@@ -1,0 +1,117 @@
+- content_for :broker_center_body do
+  %article.sub-page-content
+    %h2.sub-title
+      Get Approved
+    %p.slogan
+      Our goal is to provide you with exceptional service  help you grow your business.
+    %span.mb25.db  
+      %a.become-a-partner-modal{:href => "#"}
+        Learn About Becoming a Partner.
+    %h2.heading.mb15 Apply now
+    %ul.order--number.mb40--force
+      %li Submit your company info and submission preferences
+      %li Immediately receive a completed contract package
+      %li Sign and return contract package accompanied by financials
+      %li Receive approval and submit your loan
+    %p.light
+      Complete the form below to become an approved broker. Upon submission, you will recieve a completed partner agreement with instructions regarding final approval steps. 
+    %p.bold
+      Need Help? Contact us at
+      %span (949)423-3026.
+    %section.inner-wrap.forms.form
+      %div{"ng-controller" => "BrokerApprovalFormController", "ng-init" => "init(#{@broker_approval_form.to_json(include: [tpo_user_access_requests: { methods: [:errors]}] )})"}
+        %div.well.well--progress
+          // Richard, is this method ok? Or is there a better alternative. 
+          // @Hamza, this was my take on how to solve this.
+          %div.state{"ng-class" => "{'active' : currentStep == 'step1'}"}
+            %span Apply : Step 1
+          %div.state{"ng-class" => "{'active' : currentStep == 'step2'}"}
+            %span Apply : Step 2
+          %div.state
+            %span Summary
+        = simple_form_for(@broker_approval_form, html: { class: 'form-horizontal' }, :defaults => { :input_html => { :class => "select2-choice" } }, wrapper: :horizontal_form, wrapper_mappings: { check_boxes: :horizontal_radio_and_checkboxes}) do |f|
+          = render 'shared/error_messages', object: f.object
+          %div{"ng-show" => "currentStep == 'step1'"}
+            %fieldset
+              %legend
+                Company Information 
+              = f.input :company, as: :string
+              = f.input :company_type, as: :select, collection: BrokerApprovalForm::COMPANY_TYPES, prompt: :translate, input_html: { class: "select2" }
+              = f.input :dba
+            %fieldset{:class => "form-group string required broker_approval_form_company_president #{@broker_approval_form.errors[:company_president].present? ? 'has-error' : ''}"}
+              %label.string.required.control-label{:for => "broker_approval_form_company_president"}
+                Company President
+              .info-two-column  
+                %input.form-group.string.required.form-control{"ng-model" => "brokerApprovalForm.companyPresidentFirstName", :placeholder => "First Name (Owner / President)", :type => "text"}
+                %input.form-group.string.required.form-control{"ng-model" => "brokerApprovalForm.companyPresidentLastName", :placeholder => "Last Name (Owner / President)", :type => "text"}
+              = f.hidden_field :company_president, value: "{{ brokerApprovalForm.companyPresidentFirstName }} {{ brokerApprovalForm.companyPresidentLastName }}"
+              = f.input :address
+            %fieldset
+              .info-two-column
+                = f.input :city
+                .info-two-column.form-group
+                  = f.association :state, label_method: :name, include_blank: false, input_html: { class: "select2" }
+                  = f.input :zip
+              .info-two-column
+                = f.input :broker_of_record
+                = f.input :nmls
+            %fieldset.inner-form
+              %legend
+                I want to be approved for:
+                = f.association :loan_types, as: :check_boxes
+            .info-two-column
+              = f.input :lender_paid_compensation_percentage, collection: BrokerApprovalForm::COMPENSATION_PERCENTAGE, include_blank: false, input_html: { class: "select2" }
+              = f.input :maximum_compensation, collection: BrokerApprovalForm::MAXIMUM_COMPENSATION, include_blank: false, input_html: { class: "select2" }
+            %fieldset.form-footer
+              %a{href: "javascript:void(0)", :class => "mr10 bt-cta bt-cta--secondary bt-cta--light-gray"} Cancel
+              %a{href: "javascript:void(0)", "ng-click" => "currentStep = 'step2'", :class => "bt-cta bt-cta--red bt-cta--secondary"} Next
+          %div{"ng-show" => "currentStep == 'step2'"}
+            %fieldset{:class => "form-group string required broker_approval_form_primary_contact #{@broker_approval_form.errors[:primary_contact].present? ? 'has-error' : ''}"}
+              %legend.string.required.control-label{:for => "broker_approval_form_primary_contact"}
+                Primary Contact
+                .info-two-column
+                  %input.form-group.string.required.form-control{"ng-model" => "brokerApprovalForm.primaryContactFirstName", :placeholder => "First Name", :type => "text"}
+                  %input.form-group.string.required.form-control{"ng-model" => "brokerApprovalForm.primaryContactLastName", :placeholder => "Last Name", :type => "text"}
+                  = f.hidden_field :primary_contact, value: "{{ brokerApprovalForm.primaryContactFirstName }} {{ brokerApprovalForm.primaryContactLastName }}"
+              .info-two-column
+                = f.input :title
+                = f.input :phone
+                = f.input :email, as: :string
+                = f.input :how_did_you_find_us, collection: BrokerApprovalForm::HOW_DID_YOU_FIND_US, include_blank: false, input_html: { "ng-model" => "brokerApprovalForm.how_did_you_find_us", class: "select2" }, prompt: :translate
+                %div{"ng-show" => "brokerApprovalForm.how_did_you_find_us == 'Contacted by Account Executive'"}
+                  = f.input :how_did_you_find_us_account_executive_name, collection: Loan::ACCOUNT_EXECUTIVES, prompt: :translate, input_html: { class: "select2" }
+                %fieldset{"ng-show" => "brokerApprovalForm.how_did_you_find_us == 'Other'"}
+              = f.input :how_did_you_find_us_other, prompt: :translate
+            %fieldset.inner-form
+              %legend Issue User TPO Access
+            %div{"ng-repeat" => "tpo_user_access_requests in brokerApprovalForm.tpo_user_access_requests"}
+              = f.simple_fields_for :tpo_user_access_requests, TpoUserAccessRequest.new, child_index: '{{$index}}' do |ff|
+                .tpo-request-form   
+                  %fieldset.inner-form
+                    .info-two-column
+                      = ff.input :first_name, input_html: { "ng-model" => "tpo_user_access_requests.first_name" }, wrapper_html: { "ng-class" => "{'has-error': hasTpoError($index, 'first_name')}" }
+                      = ff.input :last_name, input_html: { "ng-model" => "tpo_user_access_requests.last_name" }, wrapper_html: { "ng-class" => "{'has-error': hasTpoError($index, 'last_name')}" }
+                      = ff.input :role, collection: User::ROLES, include_blank: false, :prompt => "Role", input_html: { class: "select2", "ng-model" => "tpo_user_access_requests.role", "ui-select2" => "defaultSelect2Options" }, wrapper_html: { "ng-class" => "{'has-error': hasTpoError($index, 'role')}" }
+                      = ff.input :email, input_html: { "ng-model" => "tpo_user_access_requests.email" }, wrapper_html: { "ng-class" => "{'has-error': hasTpoError($index, 'email')}" }
+                  %fieldset.inner-form
+                    .info-three-column
+                      = ff.input :nmls_number, :placeholder => "MLS Number", input_html: { "ng-model" => "tpo_user_access_requests.nmls_number" }, wrapper_html: { "ng-class" => "{'has-error': hasTpoError($index, 'nmls_number')}" }
+                      = ff.input :nmls_issued, as: :date_picker, :placeholder => "Date MLS Issued", input_html: { "ng-model" => "tpo_user_access_requests.nmls_issued" }, wrapper_html: { "ng-class" => "{'has-error': hasTpoError($index, 'nmls_issued')}" }
+                      = ff.input :nmls_expiration, as: :date_picker, :placeholder => "Date MLS Expired", input_html: { "ng-model" => "tpo_user_access_requests.nmls_expiration" }, wrapper_html: { "ng-class" => "{'has-error': hasTpoError($index, 'nmls_expiration')}" }
+                %a{href: "javascript:void(0)", "ng-click" => "removeTpoUserAccess($index)", "ng-show" => "isTpoUserAccessRemovable()", :class => "link--dark-gray bold dib mb10"} Remove User -
+            %a{href: "javascript:void(0)", "ng-click" => "addTpoUserAccess()", :class => "link--dark-gray bold dib mb10"} Add Another User +
+            %fieldset.form-footer
+              %a{href: "javascript:void(0)", "ng-click" => "currentStep = 'step1'", :class => "mr10 bt-cta bt-cta--secondary bt-cta--light-gray"} Previous
+              = f.button :submit, value: "Submit", :class => "bt-cta bt-cta--solid-red bt-cta--secondary mb0"
+= render "broker_center/page_body"
+%div.modal__overlay#become-a-partner-modal
+  %div.modal__body
+    %a.modal__close{:href => "javascript:void(0)"} X
+    %h2.heading
+      As a
+      %span.fancy_title.last-red CHMW
+      partner, get everything you need to grow your business.
+    %p.body-text-1 More products mean more opportunities for you to lend. Faster turnarounds mean you can close more loans. Smart people equipped with the information you need means no runaround.
+    %p.body-text-1
+      %span.fancy_title.last-red CHMW
+      is committed to doing business with exceptional quality brokers. We provide services unmatched in our industry, backed by excelent technology, superior operations, and a direct lending approach. Working with us is more than just business; it's about relationships, and a willingness to go the extra mile to make your business successful.

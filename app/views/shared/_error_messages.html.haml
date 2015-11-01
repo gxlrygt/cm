@@ -1,0 +1,9 @@
+- if object.errors.any?
+  .flash-error
+    %div
+      Please Review & Complete all required fields.
+    -#  The form contains #{pluralize(object.errors.count, "error")}.
+    -#%ul
+    -#  - object.errors.full_messages.each do |msg|
+    -#    %li
+    -#      * #{msg}

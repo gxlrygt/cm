@@ -1,0 +1,275 @@
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-font-smoothing: subpixel-antialiased;
+  -webkit-font-smoothing: antialiased;
+}
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+// Type Hierarchy
+
+html {
+  font-size: 62.5%;
+  -webkit-font-smoothing: antialiased;
+}
+body {
+  color: #333333;
+  @extend .font-roboto;
+  font-style: normal;
+  font-size: 17px;
+  font-size: 1.7rem;
+  font-weight: 400;
+  // line-height: 1.41176470588
+  margin: 0;
+  padding: 0;
+  background: white;
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+li {
+  list-style-type: none;
+}
+.last-red{
+  span{
+    &:nth-child(4){
+      color:$wh-red;
+      //border-bottom: 1px solid $wh-red;
+    }
+  }
+}
+.link{
+  &--underline {
+    text-decoration: underline;
+    color: $wh-dark-gray;
+    &:hover {
+      color: $wh-red;
+    }
+  }
+  &--red {
+    color:$wh-red;
+    &:hover {
+      color: $wh-dark-gray;
+    }
+  }
+  &--dark-gray{
+    color:$wh-dark-gray;
+    &:hover{
+      color: $wh-red;
+    }
+  }
+}
+
+.order{
+  &--number{
+    list-style-position:inside;
+    li{
+      color:#545454;
+      font-size: 18px;
+      font-weight: 300;
+      list-style-type: decimal;
+    }
+  }
+  &--line{
+    list-style-position:inside;
+    li{
+      position: relative;
+      list-style-type: none;
+      padding-left: 15px;
+      font-size: 16px;
+      line-height: 20px;
+      &:before{
+        position: absolute;
+        content: "-";
+        left: 0;
+        top: 0;
+        font-weight: bold;
+      }
+    }
+  }
+}
+.db{
+  display: block;
+  &--force{
+    display: block !important;
+  }
+}
+.dib{
+  display:inline-block;
+}
+.none{
+  display: none;
+}
+.pb0{
+  padding-bottom: 0;
+  &--force{
+    padding-bottom: 0 !important;
+  }
+}
+.pr50{
+  padding-right: 50px;
+}
+.m0{
+  margin: 0;
+}
+.mb0{
+  margin-bottom: 0;
+  &--force {
+  margin-bottom: 0 !important;  
+  }
+}
+.m20-0{
+  margin:20px 0;
+}
+.mb10{
+  margin-bottom: 10px;
+  &--force{
+    margin-bottom: 10px !important;
+  }
+}
+.mb15{
+  margin-bottom: 15px;
+  &--force{
+    margin-bottom: 15px !important;
+  }
+}
+.mb20{
+  margin-bottom: 20px;
+  &--force{
+    margin-bottom: 20px !important;
+  }
+}
+.mb25{
+  margin-bottom: 25px;
+  &--force{
+    margin-bottom: 25px !important;
+  }
+}
+.mb26{
+  margin-bottom: 26px;
+  &--force{
+    margin-bottom: 26px !important;
+  }
+}
+.mb40{
+  margin-bottom: 40px;
+  &--force{
+    margin-bottom: 40px !important;
+  }
+}
+.mb50{
+  margin-bottom: 50px;
+  &--force{
+    margin-bottom: 50px !important;
+  }
+}
+.mb200{
+  margin-bottom: 200px;
+  &--force{
+    margin-bottom: 200px !important;
+  }
+}
+.mt25{
+  margin-top: 25px;
+  &--force{
+    margin-top: 25px !important;
+  }
+}
+.ml150{
+  margin-left: 150px;
+  &--force{
+    margin-left: 150px !important;
+  }
+}
+.mr10{
+  margin-right: 10px;
+  &--force{
+    margin-right: 10px !important;
+  }
+}
+.mr70{
+  margin-right: 70px;
+  &--force{
+    margin-right: 70px !important;
+  }
+}
+.mr130{
+  margin-right: 130px;
+  &--force{
+    margin-right: 130px !important;
+  }
+}
+.tar{
+  text-align: right;
+}
+.tac{
+  text-align: center;
+}
+.tal{
+  text-align: left;
+}
+.border-none{
+  border:none;
+}
+.sheet-frame {
+  border:none;
+  overflow: hidden;
+}
+.oh{
+  overflow: hidden;
+}
+.w316px{
+  width: 316px;
+}
+.w75p{
+  width: 75%;
+}
+.h270px{
+  height: 270px;
+}
+.fl{
+  float: left;
+}
+.fr{
+  float: right;
+}
+
+// Readability for tables
+.color-steps {
+  tr:nth-child(even){
+    background-color: tint($wh-light-gray, 80%);
+  }
+  &--matrix-left{
+    text-align: left !important;
+    padding-left: 15px;
+    tbody > tr td:nth-child(even) {
+      text-align: right;
+    }
+  }
+}
+
+// Clearfixes
+.clearfix:before, .clearfix:after {
+  content: " ";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}

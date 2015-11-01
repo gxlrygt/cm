@@ -1,0 +1,92 @@
+@import "bourbon";
+@import "reset.css";
+@import "bitters/base/base";
+@import "neat";
+@import "settings_colors";
+
+.coverletter {
+  padding-top: 80px !important;
+  @include outer-container;
+
+  .wrapper{
+    padding: 0;
+  }
+
+  h1 {
+    margin-left: 50px;
+  }
+
+  address {
+    position: fixed;
+    right: 0;
+    top: 25px;
+    text-transform: uppercase;
+    font-size: 10px;
+    color: $wh-red;
+  }
+
+  h1, h2, h3, h4, h5 {
+    margin-bottom: 0;
+    line-height: 12px;
+    text-transform: uppercase;
+  }
+
+  h2 {
+    margin-bottom: 15px;
+  }
+  h3 {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-weight: 700;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  ul {
+    margin-bottom: 25px;
+    padding-left: 25px;
+  }
+
+  table {
+    border: 0;
+    border-collapse: separate;
+    border-spacing: 10px 0px;
+    tr {
+      border: 0;
+      td {
+        line-height: 14px;
+        border: 0;
+        padding: 5px;
+        span {
+          display: block;
+        }
+      }
+    }
+    thead tr td {
+      padding: 0px !important;
+    }
+  }
+}
+.signature_table {
+  width: 500px;
+  border-spacing: 10px;
+  border-collapse: separate;
+  padding-top: 50px;
+  padding-left: 0px;
+  tr td {
+    padding-top: 10px !important;
+    border: 0;
+    border-top: 1px solid #000 !important;
+    span {
+      display: block;
+      &:first-of-type {
+        padding-bottom: 5px;
+      }
+      &:not(:first-child){
+        font-weight: bold;
+      }
+    }
+  }
+}
